@@ -238,6 +238,472 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Amplifier_Current:INA240A2D"
+			(pin_names
+				(offset 0.127)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 3.81 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "INA240A2D"
+				(at 3.81 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+				(at 0 -16.51 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/ina240.pdf"
+				(at 3.81 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "High- and Low-Side, Bidirectional, Zero-Drift, Current-Sense Amplifier With Enhanced PWM Rejection, 50V/V, SOIC-8"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "current monitor shunt sensor bidirectional high low"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SOIC*3.9x4.9mm*P1.27mm*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "INA240A2D_0_1"
+				(polyline
+					(pts
+						(xy 5.08 0) (xy -5.08 5.08) (xy -5.08 -5.08) (xy 5.08 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "INA240A2D_1_1"
+				(pin input line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 7.62 270)
+					(length 3.81)
+					(name "V+"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 -7.62 90)
+					(length 3.81)
+					(name "GND"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -2.54 -7.62 90)
+					(length 3.81)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -7.62 90)
+					(length 5.08)
+					(name "REF2"
+						(effects
+							(font
+								(size 0.508 0.508)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -7.62 90)
+					(length 6.35)
+					(name "REF1"
+						(effects
+							(font
+								(size 0.508 0.508)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Amplifier_Current:INA240A3D"
+			(pin_names
+				(offset 0.127)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 3.81 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "INA240A3D"
+				(at 3.81 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+				(at 0 -16.51 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/ina240.pdf"
+				(at 3.81 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "High- and Low-Side, Bidirectional, Zero-Drift, Current-Sense Amplifier With Enhanced PWM Rejection, 100V/V, SOIC-8"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "current monitor shunt sensor bidirectional high low"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SOIC*3.9x4.9mm*P1.27mm*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "INA240A3D_0_1"
+				(polyline
+					(pts
+						(xy 5.08 0) (xy -5.08 5.08) (xy -5.08 -5.08) (xy 5.08 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "INA240A3D_1_1"
+				(pin input line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 7.62 270)
+					(length 3.81)
+					(name "V+"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 -7.62 90)
+					(length 3.81)
+					(name "GND"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -2.54 -7.62 90)
+					(length 3.81)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -7.62 90)
+					(length 5.08)
+					(name "REF2"
+						(effects
+							(font
+								(size 0.508 0.508)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -7.62 90)
+					(length 6.35)
+					(name "REF1"
+						(effects
+							(font
+								(size 0.508 0.508)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:C_Polarized"
 			(pin_numbers
 				(hide yes)
@@ -1359,28 +1825,22 @@
 		)
 	)
 	(junction
-		(at 96.52 99.06)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "04721cd0-1e05-4bc7-b56b-4d5ab5519b7a")
-	)
-	(junction
 		(at 125.73 78.74)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "18a91a82-b883-4b6b-a317-06030b57cdc8")
 	)
 	(junction
-		(at 157.48 99.06)
+		(at 157.48 102.87)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "8071c829-241e-4958-b61a-9d276200792a")
+		(uuid "c9bce1f7-4227-431e-a208-f68817454be2")
 	)
 	(junction
-		(at 157.48 54.61)
+		(at 157.48 115.57)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "9492c82b-0784-4b2d-a5ef-a9765a4eb61a")
+		(uuid "ca3d8cf5-7482-4e87-8dc0-6ea86ea42598")
 	)
 	(junction
 		(at 96.52 54.61)
@@ -1389,10 +1849,22 @@
 		(uuid "e58d1689-f444-4c56-aaa0-2473eabe02ca")
 	)
 	(junction
+		(at 157.48 96.52)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e65a51ce-8832-4d48-b80d-06cccfa07097")
+	)
+	(junction
 		(at 157.48 78.74)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ebdc3d2d-c82f-42c5-9b5b-e11985ab0ac6")
+	)
+	(junction
+		(at 96.52 96.52)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f4064cb7-dd9c-4f43-9dc7-06d4f3571f3d")
 	)
 	(wire
 		(pts
@@ -1406,7 +1878,7 @@
 	)
 	(wire
 		(pts
-			(xy 157.48 99.06) (xy 96.52 99.06)
+			(xy 157.48 96.52) (xy 96.52 96.52)
 		)
 		(stroke
 			(width 0)
@@ -1416,17 +1888,27 @@
 	)
 	(wire
 		(pts
-			(xy 82.55 151.13) (xy 82.55 146.05)
+			(xy 205.74 109.22) (xy 213.36 109.22)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "10336f36-71b4-4fdb-b082-6ee7c536d342")
+		(uuid "16c6250e-ad6b-43f7-9a74-ac513c20f466")
 	)
 	(wire
 		(pts
-			(xy 80.01 91.44) (xy 80.01 99.06)
+			(xy 180.34 96.52) (xy 182.88 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "199b9c2c-74c4-496f-8322-564821a4da4c")
+	)
+	(wire
+		(pts
+			(xy 80.01 91.44) (xy 80.01 96.52)
 		)
 		(stroke
 			(width 0)
@@ -1446,23 +1928,33 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 133.35) (xy 82.55 133.35)
+			(xy 170.18 102.87) (xy 157.48 102.87)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2741d2b4-a340-4ca8-974c-b04850b26b34")
+		(uuid "258fc21d-5508-4881-87fe-5dad98bfe351")
 	)
 	(wire
 		(pts
-			(xy 157.48 93.98) (xy 157.48 99.06)
+			(xy 157.48 93.98) (xy 157.48 96.52)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "2869fbbc-72e2-422d-979e-c4fd41ec0895")
+	)
+	(wire
+		(pts
+			(xy 170.18 115.57) (xy 157.48 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2f1128de-bc6a-472a-8cd8-cc41c0681363")
 	)
 	(wire
 		(pts
@@ -1476,6 +1968,16 @@
 	)
 	(wire
 		(pts
+			(xy 177.8 106.68) (xy 170.18 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "34a451f1-d127-4f22-81d9-76816fd7b2d7")
+	)
+	(wire
+		(pts
 			(xy 109.22 54.61) (xy 157.48 54.61)
 		)
 		(stroke
@@ -1486,6 +1988,26 @@
 	)
 	(wire
 		(pts
+			(xy 157.48 96.52) (xy 157.48 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "43b95cbd-beb3-4fa0-93c3-7dd853ecc36b")
+	)
+	(wire
+		(pts
+			(xy 157.48 102.87) (xy 157.48 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4c61c5b4-5b60-468f-953d-ded49171cf7c")
+	)
+	(wire
+		(pts
 			(xy 157.48 73.66) (xy 157.48 78.74)
 		)
 		(stroke
@@ -1493,16 +2015,6 @@
 			(type default)
 		)
 		(uuid "5152e767-ac45-417c-bbb6-8b0f2289af70")
-	)
-	(wire
-		(pts
-			(xy 82.55 133.35) (xy 82.55 138.43)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "518db555-270b-40cd-9770-1bec5496fc8a")
 	)
 	(wire
 		(pts
@@ -1546,13 +2058,13 @@
 	)
 	(wire
 		(pts
-			(xy 190.5 54.61) (xy 157.48 54.61)
+			(xy 170.18 111.76) (xy 170.18 115.57)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "66132633-12eb-4f6e-97c8-1b310702f673")
+		(uuid "6a9c768d-9ddb-4f01-b190-939d2eb52649")
 	)
 	(wire
 		(pts
@@ -1563,16 +2075,6 @@
 			(type default)
 		)
 		(uuid "70b76a76-b64f-4560-8a9c-2c317141045a")
-	)
-	(wire
-		(pts
-			(xy 190.5 74.93) (xy 190.5 54.61)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "71089a73-8b6c-4ac8-b101-902465aa735e")
 	)
 	(wire
 		(pts
@@ -1596,6 +2098,16 @@
 	)
 	(wire
 		(pts
+			(xy 157.48 115.57) (xy 157.48 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "78e67948-4cbc-41eb-a463-20fe5db29213")
+	)
+	(wire
+		(pts
 			(xy 120.65 81.28) (xy 104.14 81.28)
 		)
 		(stroke
@@ -1603,36 +2115,6 @@
 			(type default)
 		)
 		(uuid "79c4e872-d65e-4982-9752-b47d6c4dd02c")
-	)
-	(wire
-		(pts
-			(xy 101.6 144.78) (xy 88.9 144.78)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7bec4e9a-eb10-4e62-abbd-a4ec5f422938")
-	)
-	(wire
-		(pts
-			(xy 88.9 144.78) (xy 88.9 151.13)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "82cee22f-3003-495d-81b4-901538977871")
-	)
-	(wire
-		(pts
-			(xy 190.5 99.06) (xy 157.48 99.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8372aa36-2ed3-4eb8-bfd2-462086a57a34")
 	)
 	(wire
 		(pts
@@ -1656,16 +2138,6 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 139.7) (xy 88.9 133.35)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "93e8ab2d-8839-470b-a7b0-9773d7441624")
-	)
-	(wire
-		(pts
 			(xy 157.48 78.74) (xy 157.48 83.82)
 		)
 		(stroke
@@ -1673,6 +2145,26 @@
 			(type default)
 		)
 		(uuid "95554065-9c5e-4adf-b2b3-c11b7f24576d")
+	)
+	(wire
+		(pts
+			(xy 182.88 121.92) (xy 182.88 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9fdeae04-3b4a-48b5-96a4-0a0df5b20b79")
+	)
+	(wire
+		(pts
+			(xy 170.18 106.68) (xy 170.18 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a073fa6e-6b58-4519-9567-05928d38f1fb")
 	)
 	(wire
 		(pts
@@ -1696,6 +2188,26 @@
 	)
 	(wire
 		(pts
+			(xy 177.8 111.76) (xy 170.18 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b451f115-2174-4948-8a8c-fa019faa1cfa")
+	)
+	(wire
+		(pts
+			(xy 182.88 96.52) (xy 182.88 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b504a4f5-61c4-4a91-afc6-33741da06806")
+	)
+	(wire
+		(pts
 			(xy 96.52 54.61) (xy 101.6 54.61)
 		)
 		(stroke
@@ -1706,27 +2218,17 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 151.13) (xy 82.55 151.13)
+			(xy 157.48 113.03) (xy 157.48 115.57)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c1d2d13a-e03c-40b4-bf8f-4f739204fcbc")
+		(uuid "d7c07154-0fcd-4a5f-b567-ba2968be7228")
 	)
 	(wire
 		(pts
-			(xy 190.5 82.55) (xy 190.5 99.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c859d9c8-e77c-44e3-8f13-29fabcee1ba4")
-	)
-	(wire
-		(pts
-			(xy 96.52 86.36) (xy 96.52 99.06)
+			(xy 96.52 86.36) (xy 96.52 96.52)
 		)
 		(stroke
 			(width 0)
@@ -1743,26 +2245,6 @@
 			(type default)
 		)
 		(uuid "e1460e6e-2108-412c-887e-66f8e7b9298e")
-	)
-	(wire
-		(pts
-			(xy 101.6 139.7) (xy 88.9 139.7)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ed568d80-fec6-4c48-bf4d-2ddf688ce1e6")
-	)
-	(wire
-		(pts
-			(xy 96.52 99.06) (xy 96.52 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f0b560a8-6143-4d7f-9e83-17c3596f72f5")
 	)
 	(wire
 		(pts
@@ -1806,7 +2288,17 @@
 	)
 	(wire
 		(pts
-			(xy 80.01 99.06) (xy 96.52 99.06)
+			(xy 193.04 109.22) (xy 198.12 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f9a4c6e2-0542-47f2-aaf1-d62ec4632684")
+	)
+	(wire
+		(pts
+			(xy 80.01 96.52) (xy 96.52 96.52)
 		)
 		(stroke
 			(width 0)
@@ -1814,137 +2306,71 @@
 		)
 		(uuid "fdde1538-631b-42ff-bedb-cc57b7bf9a83")
 	)
-	(global_label "PWM_IN_A"
-		(shape input)
-		(at 63.5 73.66 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "56987a2d-b64e-4579-8d67-6bc4b161fc1f")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 51.3829 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "PWR_3.3V"
-		(shape input)
-		(at 104.14 121.92 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "79b48b39-fe1d-4881-8cf0-fd96812f782f")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 92.0834 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "PHASE A"
-		(shape input)
-		(at 168.91 78.74 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "aeadc74a-9b28-4844-9528-27e7e6037217")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 179.999 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "VISENSE_A"
-		(shape input)
-		(at 144.78 142.24 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "b09aa979-f541-4f66-8ef8-b2daeffc8b95")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 157.5623 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "PWR_12V"
-		(shape input)
-		(at 86.36 43.18 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "b76bed96-fdab-4f6e-b193-ff9b34106c51")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 74.9082 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "SD_A"
+	(hierarchical_label "SD_A"
 		(shape input)
 		(at 63.5 76.2 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "cc0f22ea-03fd-488e-89dc-9fed155badf7")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 55.9791 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
+		(uuid "2fad4664-ca02-49fb-a4e1-2dc61cf4a76b")
+	)
+	(hierarchical_label "PWM_IN_A"
+		(shape input)
+		(at 63.5 73.66 180)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify right)
 		)
+		(uuid "511c4a1d-91ce-4f6c-aed0-cd48de065c81")
+	)
+	(hierarchical_label "PWR_3.3V"
+		(shape input)
+		(at 180.34 96.52 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "7b473c67-a85c-4c80-a15a-cb997dca3c21")
+	)
+	(hierarchical_label "PHASE A"
+		(shape input)
+		(at 168.91 78.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a00aeb6a-b923-4229-9503-36672b717bf7")
+	)
+	(hierarchical_label "PWR_12V"
+		(shape input)
+		(at 86.36 43.18 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a6b6eeb1-7f7f-438f-98b6-47b6d490442a")
+	)
+	(hierarchical_label "VISENSE_A"
+		(shape input)
+		(at 213.36 109.22 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ec6cfcd4-63b6-48bf-980a-eb4bfb8c5f9b")
 	)
 	(symbol
 		(lib_id "Device:D_Filled")
@@ -2034,16 +2460,15 @@
 	)
 	(symbol
 		(lib_id "Amplifier_Current:INA240A1D")
-		(at 109.22 142.24 0)
+		(at 185.42 109.22 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "1981f0fc-636a-401a-b528-5fc6349a6fee")
 		(property "Reference" "U9"
-			(at 120.65 135.8198 0)
+			(at 191.262 102.362 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2051,7 +2476,7 @@
 			)
 		)
 		(property "Value" "INA240A1D"
-			(at 120.65 138.3598 0)
+			(at 191.77 105.156 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2059,7 +2484,7 @@
 			)
 		)
 		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
-			(at 109.22 158.75 0)
+			(at 185.42 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2068,7 +2493,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/ina240.pdf"
-			(at 113.03 138.43 0)
+			(at 189.23 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2077,7 +2502,7 @@
 			)
 		)
 		(property "Description" "High- and Low-Side, Bidirectional, Zero-Drift, Current-Sense Amplifier With Enhanced PWM Rejection, 20V/V, SOIC-8"
-			(at 109.22 142.24 0)
+			(at 185.42 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2120,7 +2545,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 82.55 142.24 0)
+		(at 157.48 109.22 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2129,7 +2554,7 @@
 		(fields_autoplaced yes)
 		(uuid "528ab62b-704c-48b0-83cb-12dff2b69f01")
 		(property "Reference" "R3"
-			(at 85.09 140.9699 0)
+			(at 160.02 107.9499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2138,7 +2563,7 @@
 			)
 		)
 		(property "Value" "2mR"
-			(at 85.09 143.5099 0)
+			(at 160.02 110.4899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2147,7 +2572,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 80.772 142.24 90)
+			(at 155.702 109.22 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2156,7 +2581,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 82.55 142.24 0)
+			(at 157.48 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2165,7 +2590,7 @@
 			)
 		)
 		(property "Description" "1W shunt resistor for current sensing"
-			(at 82.55 142.24 0)
+			(at 157.48 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2180,7 +2605,7 @@
 			(uuid "985bbd77-66f4-4441-b9a4-fdfede372391")
 		)
 		(instances
-			(project ""
+			(project "BLDC_motor_driver"
 				(path "/1217eed8-ee8e-4ad2-9f65-aaa3eab4838e/aab35023-a3fe-424f-b0db-c44ab5049a21"
 					(reference "R3")
 					(unit 1)
@@ -2279,7 +2704,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 129.54 142.24 90)
+		(at 201.93 109.22 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2288,7 +2713,7 @@
 		(fields_autoplaced yes)
 		(uuid "5da781bb-1d08-44fc-bd66-3ddbb085708e")
 		(property "Reference" "R4"
-			(at 129.54 135.89 90)
+			(at 201.93 102.87 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2296,7 +2721,7 @@
 			)
 		)
 		(property "Value" "R"
-			(at 129.54 138.43 90)
+			(at 201.93 105.41 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2304,7 +2729,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 129.54 144.018 90)
+			(at 201.93 110.998 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2313,7 +2738,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 129.54 142.24 0)
+			(at 201.93 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2322,7 +2747,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 129.54 142.24 0)
+			(at 201.93 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2417,76 +2842,6 @@
 	)
 	(symbol
 		(lib_id "Device:C_Polarized")
-		(at 190.5 78.74 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "8736063c-966a-42d1-b5a1-6fab1d5f7cd6")
-		(property "Reference" "C3"
-			(at 194.31 76.5809 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "C_Polarized"
-			(at 194.31 79.1209 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 191.4652 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 190.5 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Polarized capacitor"
-			(at 190.5 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "11f796ee-4ce5-4ecf-ac2d-73ebdea14672")
-		)
-		(pin "1"
-			(uuid "dcb41c38-ebbd-4b85-9695-1d00d89b88cb")
-		)
-		(instances
-			(project "BLDC_motor_driver"
-				(path "/1217eed8-ee8e-4ad2-9f65-aaa3eab4838e/aab35023-a3fe-424f-b0db-c44ab5049a21"
-					(reference "C3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C_Polarized")
 		(at 125.73 73.66 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -2550,6 +2905,72 @@
 			(project ""
 				(path "/1217eed8-ee8e-4ad2-9f65-aaa3eab4838e/aab35023-a3fe-424f-b0db-c44ab5049a21"
 					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 182.88 121.92 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9be25882-4233-4b44-a8fe-bd9a7f613258")
+		(property "Reference" "#PWR03"
+			(at 182.88 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 182.88 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 182.88 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 182.88 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 182.88 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3cf80410-ec9d-4b65-8738-82b915b9b813")
+		)
+		(instances
+			(project "BLDC_motor_driver"
+				(path "/1217eed8-ee8e-4ad2-9f65-aaa3eab4838e/aab35023-a3fe-424f-b0db-c44ab5049a21"
+					(reference "#PWR03")
 					(unit 1)
 				)
 			)
@@ -2789,7 +3210,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 96.52 101.6 0)
+		(at 157.48 121.92 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2798,7 +3219,7 @@
 		(fields_autoplaced yes)
 		(uuid "e7f93b34-334c-4b9b-a513-6976e49817b3")
 		(property "Reference" "#PWR02"
-			(at 96.52 107.95 0)
+			(at 157.48 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2807,7 +3228,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 96.52 106.68 0)
+			(at 157.48 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2815,7 +3236,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 96.52 101.6 0)
+			(at 157.48 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2824,7 +3245,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 96.52 101.6 0)
+			(at 157.48 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2833,7 +3254,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 96.52 101.6 0)
+			(at 157.48 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2848,6 +3269,92 @@
 			(project ""
 				(path "/1217eed8-ee8e-4ad2-9f65-aaa3eab4838e/aab35023-a3fe-424f-b0db-c44ab5049a21"
 					(reference "#PWR02")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Amplifier_Current:INA240A2D")
+		(at 93.98 121.92 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f064bda2-d36e-418d-a22f-3f6e73977b57")
+		(property "Reference" "U1"
+			(at 105.41 115.4998 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "INA240A2D"
+			(at 105.41 118.0398 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+			(at 93.98 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/ina240.pdf"
+			(at 97.79 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "High- and Low-Side, Bidirectional, Zero-Drift, Current-Sense Amplifier With Enhanced PWM Rejection, 50V/V, SOIC-8"
+			(at 93.98 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "8"
+			(uuid "d30ea613-2024-4ee6-908f-76d4b8cf9910")
+		)
+		(pin "3"
+			(uuid "4e1c933b-bdb8-4f9f-9b82-cb8e624b9309")
+		)
+		(pin "5"
+			(uuid "744710c0-4afd-439e-9373-8ddb2b00a0a4")
+		)
+		(pin "7"
+			(uuid "f63371b1-70c6-4634-be6c-2e6ec8b88902")
+		)
+		(pin "6"
+			(uuid "35b7aaf1-2dee-4694-939c-fe76dba6480d")
+		)
+		(pin "1"
+			(uuid "253e545c-c4cd-43f9-9392-dee448e840dd")
+		)
+		(pin "2"
+			(uuid "0597c283-3cb1-4032-b102-d605e8a32969")
+		)
+		(pin "4"
+			(uuid "2323c71d-5119-4c68-b82f-738b5b748b5d")
+		)
+		(instances
+			(project ""
+				(path "/1217eed8-ee8e-4ad2-9f65-aaa3eab4838e/aab35023-a3fe-424f-b0db-c44ab5049a21"
+					(reference "U1")
 					(unit 1)
 				)
 			)
@@ -2916,6 +3423,92 @@
 			(project ""
 				(path "/1217eed8-ee8e-4ad2-9f65-aaa3eab4838e/aab35023-a3fe-424f-b0db-c44ab5049a21"
 					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Amplifier_Current:INA240A3D")
+		(at 125.73 123.19 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fdac1f79-9a25-406d-861b-40ef0f1c71a8")
+		(property "Reference" "U4"
+			(at 137.16 116.7698 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "INA240A3D"
+			(at 137.16 119.3098 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+			(at 125.73 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/ina240.pdf"
+			(at 129.54 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "High- and Low-Side, Bidirectional, Zero-Drift, Current-Sense Amplifier With Enhanced PWM Rejection, 100V/V, SOIC-8"
+			(at 125.73 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "93405bbc-466c-4502-afb0-be05622eaee9")
+		)
+		(pin "6"
+			(uuid "e96e142c-920e-4183-9b48-d6bcbdc89ec2")
+		)
+		(pin "2"
+			(uuid "b90d5e19-7b09-4fe3-b716-8ca547fbd46f")
+		)
+		(pin "8"
+			(uuid "bf3c0b6c-5da3-489b-b9ce-11c45515a59a")
+		)
+		(pin "7"
+			(uuid "8e31dabd-5510-4402-80eb-c6b85af39cb9")
+		)
+		(pin "4"
+			(uuid "91b83e4f-5f4e-4022-9b0d-852b31f9e46e")
+		)
+		(pin "5"
+			(uuid "65f91673-07aa-4661-9c3b-9ff013ec8854")
+		)
+		(pin "3"
+			(uuid "e1d06cf2-5391-4730-878d-d41c81601919")
+		)
+		(instances
+			(project ""
+				(path "/1217eed8-ee8e-4ad2-9f65-aaa3eab4838e/aab35023-a3fe-424f-b0db-c44ab5049a21"
+					(reference "U4")
 					(unit 1)
 				)
 			)
