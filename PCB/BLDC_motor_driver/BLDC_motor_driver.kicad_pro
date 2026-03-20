@@ -616,10 +616,6 @@
     [
       "aab35023-a3fe-424f-b0db-c44ab5049a21",
       "BLDC driver phase A"
-    ],
-    [
-      "5ab36c75-9202-4db1-b707-e474bd187db8",
-      "STM32F303KBT6"
     ]
   ],
   "text_variables": {}
