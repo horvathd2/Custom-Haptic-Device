@@ -1141,174 +1141,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:D_Filled"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "D"
-				(at 0 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "D_Filled"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Diode, filled shape"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Sim.Device" "D"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Sim.Pins" "1=K 2=A"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "diode"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "D_Filled_0_1"
-				(polyline
-					(pts
-						(xy -1.27 1.27) (xy -1.27 -1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 0) (xy -1.27 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "D_Filled_1_1"
-				(pin passive line
-					(at -3.81 0 0)
-					(length 2.54)
-					(name "K"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 3.81 0 180)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:R"
 			(pin_numbers
 				(hide yes)
@@ -1416,6 +1248,173 @@
 					(at 0 -3.81 90)
 					(length 1.27)
 					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Diode:1N4148W"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "1N4148W"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Diode_SMD:D_SOD-123"
+				(at 0 -4.445 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.vishay.com/docs/85748/1n4148w.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "75V 0.15A Fast Switching Diode, SOD-123"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Device" "D"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Pins" "1=K 2=A"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "diode"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "D*SOD?123*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "1N4148W_0_1"
+				(polyline
+					(pts
+						(xy -1.27 1.27) (xy -1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "1N4148W_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2178,7 +2177,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 88.9) (xy 133.35 88.9)
+			(xy 113.03 88.9) (xy 133.35 88.9)
 		)
 		(stroke
 			(width 0)
@@ -2498,7 +2497,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 81.28) (xy 104.14 81.28)
+			(xy 113.03 81.28) (xy 104.14 81.28)
 		)
 		(stroke
 			(width 0)
@@ -2538,7 +2537,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 88.9) (xy 120.65 81.28)
+			(xy 113.03 88.9) (xy 113.03 81.28)
 		)
 		(stroke
 			(width 0)
@@ -2833,92 +2832,6 @@
 		(uuid "ec6cfcd4-63b6-48bf-980a-eb4bfb8c5f9b")
 	)
 	(symbol
-		(lib_id "Device:D_Filled")
-		(at 123.19 57.15 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "0bb5dd7f-7425-4071-842b-d6b32aeb8eaf")
-		(property "Reference" "D1"
-			(at 123.19 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "D_Filled"
-			(at 123.19 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 123.19 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 123.19 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Diode, filled shape"
-			(at 123.19 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" "D"
-			(at 123.19 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 123.19 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "26ed3a68-efa2-41a9-b6e2-ec164dae6a4e")
-		)
-		(pin "2"
-			(uuid "1531003c-8568-49f1-b6fb-78513f25b38f")
-		)
-		(instances
-			(project ""
-				(path "/1217eed8-ee8e-4ad2-9f65-aaa3eab4838e/aab35023-a3fe-424f-b0db-c44ab5049a21"
-					(reference "D1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 167.64 114.3 90)
 		(unit 1)
@@ -2928,7 +2841,7 @@
 		(dnp no)
 		(uuid "0bc25c49-2a93-4ca6-b7a3-2d24b47638ab")
 		(property "Reference" "R10"
-			(at 169.164 109.474 90)
+			(at 167.64 117.348 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2936,7 +2849,7 @@
 			)
 		)
 		(property "Value" "R"
-			(at 168.402 111.506 90)
+			(at 166.878 119.38 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3143,10 +3056,9 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "528ab62b-704c-48b0-83cb-12dff2b69f01")
 		(property "Reference" "R3"
-			(at 160.02 107.9499 0)
+			(at 151.384 108.204 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3155,7 +3067,7 @@
 			)
 		)
 		(property "Value" "2mR"
-			(at 160.02 110.4899 0)
+			(at 150.876 110.236 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3163,7 +3075,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_2512_6332Metric"
 			(at 155.702 109.22 90)
 			(effects
 				(font
@@ -3172,7 +3084,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.tme.eu/en/details/mpr251205fr002/smd-resistors/wayon/"
 			(at 157.48 109.22 0)
 			(effects
 				(font
@@ -3381,7 +3293,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C_Polarized"
+		(property "Value" "10u"
 			(at 83.82 88.0109 0)
 			(effects
 				(font
@@ -3390,7 +3302,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_Tantalum_SMD:CP_EIA-2012-12_Kemet-R"
 			(at 80.9752 91.44 0)
 			(effects
 				(font
@@ -3451,7 +3363,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C_Polarized"
+		(property "Value" "2.2u"
 			(at 124.46 74.0409 0)
 			(effects
 				(font
@@ -3460,7 +3372,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_Tantalum_SMD:CP_EIA-2012-15_AVX-P"
 			(at 121.6152 77.47 0)
 			(effects
 				(font
@@ -3497,6 +3409,92 @@
 			(project ""
 				(path "/1217eed8-ee8e-4ad2-9f65-aaa3eab4838e/aab35023-a3fe-424f-b0db-c44ab5049a21"
 					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N4148W")
+		(at 123.19 57.15 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "987b61d4-3cfb-4488-82ef-6cdf41fd2a95")
+		(property "Reference" "D3"
+			(at 123.19 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148W"
+			(at 123.19 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SOD-123"
+			(at 123.19 52.705 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.vishay.com/docs/85748/1n4148w.pdf"
+			(at 123.19 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "75V 0.15A Fast Switching Diode, SOD-123"
+			(at 123.19 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 123.19 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 123.19 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7446ef53-08d0-4156-a4f5-2f08c7ee214a")
+		)
+		(pin "2"
+			(uuid "d6acd820-a3a3-4b68-9a3f-778942ba7f5d")
+		)
+		(instances
+			(project ""
+				(path "/1217eed8-ee8e-4ad2-9f65-aaa3eab4838e/aab35023-a3fe-424f-b0db-c44ab5049a21"
+					(reference "D3")
 					(unit 1)
 				)
 			)
@@ -3577,7 +3575,7 @@
 		(dnp no)
 		(uuid "abe3b2c9-4972-415b-b19c-c653fe9ead2f")
 		(property "Reference" "R9"
-			(at 168.91 99.314 90)
+			(at 167.386 99.314 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3585,7 +3583,7 @@
 			)
 		)
 		(property "Value" "R"
-			(at 168.402 101.346 90)
+			(at 166.878 101.346 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3644,7 +3642,7 @@
 		(dnp no)
 		(uuid "ae7429e5-b0f2-4d94-a547-660ad34468f1")
 		(property "Reference" "C26"
-			(at 178.054 118.11 0)
+			(at 168.402 109.982 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3653,7 +3651,7 @@
 			)
 		)
 		(property "Value" "100n"
-			(at 178.562 116.332 0)
+			(at 168.148 108.204 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3661,7 +3659,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 177.4952 113.03 0)
 			(effects
 				(font
@@ -3795,7 +3793,7 @@
 		(dnp no)
 		(uuid "c22164eb-70e2-4054-9ce7-db9deeb23c28")
 		(property "Reference" "C25"
-			(at 201.93 98.552 0)
+			(at 204.47 94.996 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3804,7 +3802,7 @@
 			)
 		)
 		(property "Value" "100n"
-			(at 202.438 96.774 0)
+			(at 204.216 92.964 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3812,7 +3810,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 201.6252 97.79 0)
 			(effects
 				(font
@@ -4011,25 +4009,24 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "e238ed14-43b4-450b-83c5-38e8028b1032")
 		(property "Reference" "R2"
-			(at 137.16 82.55 90)
+			(at 137.16 83.566 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "R"
-			(at 137.16 85.09 90)
+		(property "Value" "10R"
+			(at 137.16 86.106 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 137.16 90.678 90)
 			(effects
 				(font
@@ -4230,25 +4227,24 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "f1715b93-1767-4a87-9966-b5a74c602ba5")
 		(property "Reference" "R1"
-			(at 137.16 62.23 90)
+			(at 137.16 63.246 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "R"
-			(at 137.16 64.77 90)
+		(property "Value" "10R"
+			(at 137.16 65.786 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 137.16 70.358 90)
 			(effects
 				(font

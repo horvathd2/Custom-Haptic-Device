@@ -8711,7 +8711,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "10k"
 			(at 22.86 58.4199 0)
 			(effects
 				(font
@@ -11924,7 +11924,7 @@
 		(dnp no)
 		(uuid "f6340d1a-c037-4961-9604-f96fbd49cf8d")
 		(property "Reference" "C13"
-			(at 21.844 73.66 0)
+			(at 22.86 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11932,8 +11932,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C"
-			(at 23.368 71.628 0)
+		(property "Value" "0.1u"
+			(at 22.86 71.882 0)
 			(effects
 				(font
 					(size 1.27 1.27)
