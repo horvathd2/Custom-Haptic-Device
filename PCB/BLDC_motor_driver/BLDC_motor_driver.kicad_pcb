@@ -4430,7 +4430,7 @@
 				)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "0.1u"
 			(at 0 1.05 0)
 			(layer "F.Fab")
 			(uuid "dec87aeb-fe6d-4fa6-941c-623fed3c5f5b")
@@ -6192,7 +6192,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "10k"
 			(at 0 1.17 0)
 			(layer "F.Fab")
 			(uuid "002b1c8f-599d-4661-9573-81f1a20a431d")
