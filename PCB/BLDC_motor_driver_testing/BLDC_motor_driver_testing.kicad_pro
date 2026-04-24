@@ -616,6 +616,14 @@
     [
       "84a85dbb-6ec3-48bc-bc0c-ced3ee7759cd",
       "BLDC driver phase A"
+    ],
+    [
+      "75eb2a18-d734-4bd7-a689-095bb5279c38",
+      "BLDC driver phase B"
+    ],
+    [
+      "e38af695-4296-4eb8-a85e-192699e3a5d3",
+      "BLDC driver phase C"
     ]
   ],
   "text_variables": {}
