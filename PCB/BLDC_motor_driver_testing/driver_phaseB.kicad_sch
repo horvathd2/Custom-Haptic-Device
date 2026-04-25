@@ -1944,6 +1944,12 @@
 		(uuid "6d000101-a946-4b3c-b043-6f942c3dff5c")
 	)
 	(junction
+		(at 66.04 93.98)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7c861552-a762-42cf-9cea-55f2d79024c0")
+	)
+	(junction
 		(at 83.82 72.39)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1968,6 +1974,12 @@
 		(uuid "a95f78b5-6529-4ef2-af5c-e1b12473bb40")
 	)
 	(junction
+		(at 86.36 35.56)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "aaeefb4a-ef3f-462c-b41b-eb02f2c57639")
+	)
+	(junction
 		(at 146.05 127)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1990,12 +2002,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e60ab38f-06ea-40b5-bf74-e68b51bbb005")
-	)
-	(junction
-		(at 83.82 64.77)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ecf61b59-dec2-4116-a78c-73cf2dff1a6a")
 	)
 	(junction
 		(at 129.54 120.65)
@@ -2143,7 +2149,7 @@
 	)
 	(wire
 		(pts
-			(xy 113.03 64.77) (xy 113.03 69.85)
+			(xy 113.03 35.56) (xy 113.03 69.85)
 		)
 		(stroke
 			(width 0)
@@ -2203,7 +2209,7 @@
 	)
 	(wire
 		(pts
-			(xy 66.04 92.71) (xy 66.04 96.52)
+			(xy 66.04 92.71) (xy 66.04 93.98)
 		)
 		(stroke
 			(width 0)
@@ -2230,6 +2236,16 @@
 			(type default)
 		)
 		(uuid "3bb3a2cd-d600-4e96-bcde-8daef41bece8")
+	)
+	(wire
+		(pts
+			(xy 55.88 93.98) (xy 66.04 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "42e0d572-56c9-4ee2-b65b-3fac7a570bb2")
 	)
 	(wire
 		(pts
@@ -2323,6 +2339,16 @@
 	)
 	(wire
 		(pts
+			(xy 113.03 35.56) (xy 86.36 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5e234d68-8d90-4f9a-9338-154640374600")
+	)
+	(wire
+		(pts
 			(xy 99.06 74.93) (xy 101.6 74.93)
 		)
 		(stroke
@@ -2413,16 +2439,6 @@
 	)
 	(wire
 		(pts
-			(xy 83.82 64.77) (xy 113.03 64.77)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "72329164-b4c4-4af2-9a12-a266204a5095")
-	)
-	(wire
-		(pts
 			(xy 80.01 48.26) (xy 73.66 48.26)
 		)
 		(stroke
@@ -2440,6 +2456,16 @@
 			(type default)
 		)
 		(uuid "739706c0-94a5-4173-abb5-655c09accfa7")
+	)
+	(wire
+		(pts
+			(xy 66.04 93.98) (xy 66.04 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "77b092fe-0136-4b39-9619-f621142df8ed")
 	)
 	(wire
 		(pts
@@ -2993,6 +3019,17 @@
 			(justify right)
 		)
 		(uuid "86371e93-8bbc-409d-81cc-8be08a0979a6")
+	)
+	(hierarchical_label "GND"
+		(shape input)
+		(at 55.88 93.98 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ba414ed8-2d17-41f9-8387-53571265646f")
 	)
 	(hierarchical_label "PWR_3.3V"
 		(shape input)

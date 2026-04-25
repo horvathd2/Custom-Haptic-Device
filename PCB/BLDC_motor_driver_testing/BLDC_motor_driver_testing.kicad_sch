@@ -1800,6 +1800,16 @@
 	)
 	(wire
 		(pts
+			(xy 186.69 53.34) (xy 186.69 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0d23f561-82fb-4217-aa4d-6019497bd3eb")
+	)
+	(wire
+		(pts
 			(xy 156.21 100.33) (xy 156.21 101.6)
 		)
 		(stroke
@@ -1827,6 +1837,16 @@
 			(type default)
 		)
 		(uuid "14b4541f-4f6f-4fef-8691-dad55a27c2c8")
+	)
+	(wire
+		(pts
+			(xy 186.69 90.17) (xy 186.69 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "298cf113-4e4a-40ce-80bc-d50aefbe6e12")
 	)
 	(wire
 		(pts
@@ -1877,6 +1897,26 @@
 			(type default)
 		)
 		(uuid "33753524-db5d-42c2-bac5-3b199d229b4f")
+	)
+	(wire
+		(pts
+			(xy 186.69 127) (xy 186.69 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "339c3f90-1cd9-46fd-aa01-a8ceee491e99")
+	)
+	(wire
+		(pts
+			(xy 186.69 50.8) (xy 212.09 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "35174eac-4481-4ae8-a7f9-b9f1c9a6bd4a")
 	)
 	(wire
 		(pts
@@ -2100,6 +2140,16 @@
 	)
 	(wire
 		(pts
+			(xy 186.69 87.63) (xy 212.09 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "88eb937f-5351-454a-b755-d33ace321ce4")
+	)
+	(wire
+		(pts
 			(xy 120.65 142.24) (xy 118.11 142.24)
 		)
 		(stroke
@@ -2237,6 +2287,16 @@
 			(type default)
 		)
 		(uuid "ba3de8cf-19ab-4b0b-ba28-2bb6955612a8")
+	)
+	(wire
+		(pts
+			(xy 186.69 124.46) (xy 212.09 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bcb3b8f3-4dda-4bd4-8155-46ec075f8753")
 	)
 	(wire
 		(pts
@@ -2427,6 +2487,16 @@
 			(type default)
 		)
 		(uuid "ff126d9e-7281-4f15-9b3c-03202d83873e")
+	)
+	(label "GND"
+		(at 130.81 60.96 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "96dbb626-9d00-4f1a-8f67-d14b52160ff4")
 	)
 	(global_label "SD_A"
 		(shape input)
@@ -3028,6 +3098,71 @@
 			(project "BLDC_motor_driver_testing"
 				(path "/4ecc7e27-f6b5-41f4-b6cd-6ae03975803c"
 					(reference "H3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 186.69 53.34 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "06378059-053d-4a46-8121-9fb19a1cc7f0")
+		(property "Reference" "#PWR032"
+			(at 186.69 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 186.69 57.404 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 186.69 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 186.69 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 186.69 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b5b06ee0-41ef-4b41-a74a-9607876deee2")
+		)
+		(instances
+			(project "BLDC_motor_driver_testing"
+				(path "/4ecc7e27-f6b5-41f4-b6cd-6ae03975803c"
+					(reference "#PWR032")
 					(unit 1)
 				)
 			)
@@ -3777,6 +3912,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 186.69 90.17 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5f45bf1a-d945-40a4-bdf7-e3a088202e81")
+		(property "Reference" "#PWR033"
+			(at 186.69 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 186.69 94.234 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 186.69 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 186.69 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 186.69 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "da50b000-a49d-4cf4-95ac-d3549c16dea6")
+		)
+		(instances
+			(project "BLDC_motor_driver_testing"
+				(path "/4ecc7e27-f6b5-41f4-b6cd-6ae03975803c"
+					(reference "#PWR033")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+5V")
 		(at 194.31 115.57 0)
 		(unit 1)
@@ -4246,6 +4446,71 @@
 			(project "BLDC_motor_driver_testing"
 				(path "/4ecc7e27-f6b5-41f4-b6cd-6ae03975803c"
 					(reference "C4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 186.69 127 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "851c0be0-3c32-430f-b20f-8635da05b9b3")
+		(property "Reference" "#PWR034"
+			(at 186.69 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 186.69 131.064 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 186.69 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 186.69 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 186.69 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8bfe506b-54c9-498c-a28d-4c678d7d8813")
+		)
+		(instances
+			(project "BLDC_motor_driver_testing"
+				(path "/4ecc7e27-f6b5-41f4-b6cd-6ae03975803c"
+					(reference "#PWR034")
 					(unit 1)
 				)
 			)
@@ -4993,6 +5258,16 @@
 				(justify left)
 			)
 		)
+		(pin "GND" input
+			(at 212.09 87.63 180)
+			(uuid "e5adbcdc-c532-43d6-b597-1eb1c593de5a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
 		(instances
 			(project "BLDC_motor_driver_testing"
 				(path "/4ecc7e27-f6b5-41f4-b6cd-6ae03975803c"
@@ -5085,6 +5360,16 @@
 				(justify left)
 			)
 		)
+		(pin "GND" input
+			(at 212.09 50.8 180)
+			(uuid "666b7bcb-e1d5-4ca0-ad44-a4744c1ab61e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
 		(instances
 			(project "BLDC_motor_driver_testing"
 				(path "/4ecc7e27-f6b5-41f4-b6cd-6ae03975803c"
@@ -5170,6 +5455,16 @@
 		(pin "VISENSE_C" input
 			(at 212.09 128.27 180)
 			(uuid "516a92bc-3feb-46e4-ba2b-9b7fe664b35c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "GND" input
+			(at 212.09 124.46 180)
+			(uuid "454dbfc0-c5fd-4d03-afd6-599d6eeb391f")
 			(effects
 				(font
 					(size 1.27 1.27)
