@@ -2937,15 +2937,15 @@
 		)
 		(uuid "fee3d81e-79e0-47d2-b0de-48dd04d7483a")
 	)
-	(label "SD_A"
-		(at 260.35 107.95 180)
+	(label "GND_A"
+		(at 113.03 107.95 90)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
-		(uuid "5daa4a2c-8c9c-4fce-9e56-b0c2c3558d28")
+		(uuid "0bdad7bb-afb3-4e81-961a-1b986e0eb08f")
 	)
 	(label "VISENSE_A"
 		(at 219.71 105.41 0)
@@ -2967,16 +2967,6 @@
 		)
 		(uuid "639ca069-ec91-408d-bd57-05439e22e583")
 	)
-	(label "SD_A"
-		(at 52.07 82.55 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "b1cac856-cac7-4226-9897-8d88d8548dd7")
-	)
 	(label "VISENSE_A"
 		(at 156.21 115.57 0)
 		(effects
@@ -2986,6 +2976,28 @@
 			(justify left bottom)
 		)
 		(uuid "d07c818d-781e-492d-9fe2-84b1967090b5")
+	)
+	(global_label "SD_A"
+		(shape input)
+		(at 260.35 107.95 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0ae9438f-6037-4f14-9bca-5c8336daceb3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 267.8709 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 	)
 	(hierarchical_label "SD_A"
 		(shape input)

@@ -2947,26 +2947,6 @@
 		)
 		(uuid "073893e7-6b8b-49ca-9b32-3b279608364b")
 	)
-	(label "SD_C"
-		(at 260.35 107.95 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "27c75b24-68f8-4be0-b285-c3e7e39ac4c6")
-	)
-	(label "SD_C"
-		(at 52.07 82.55 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "624eb833-7bb4-4e45-be2a-3732df788f17")
-	)
 	(label "VISENSE_C"
 		(at 219.71 105.41 0)
 		(effects
@@ -2977,6 +2957,16 @@
 		)
 		(uuid "67a3c0be-ec83-46c5-8fc8-eedea3e2db2d")
 	)
+	(label "GND_C"
+		(at 113.03 107.95 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9b695928-1ee2-45ee-ae04-7d42149bfe8f")
+	)
 	(label "PHASE C"
 		(at 116.84 85.09 0)
 		(effects
@@ -2986,6 +2976,28 @@
 			(justify left bottom)
 		)
 		(uuid "b600ea75-652c-4bb4-b23e-be6b7fe1b3b6")
+	)
+	(global_label "SD_C"
+		(shape input)
+		(at 260.35 107.95 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "1743f24c-c035-4a20-8c3e-359da1fd862a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 268.0523 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 	)
 	(hierarchical_label "PWM_IN_C"
 		(shape input)
