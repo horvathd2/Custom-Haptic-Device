@@ -1998,6 +1998,12 @@
 		(uuid "e60ab38f-06ea-40b5-bf74-e68b51bbb005")
 	)
 	(junction
+		(at 186.69 93.98)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e82ad40d-b94f-4584-8707-1cd238957154")
+	)
+	(junction
 		(at 129.54 120.65)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2020,6 +2026,18 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f87553c3-6d92-41ae-a25c-b512fd2e6506")
+	)
+	(no_connect
+		(at 232.41 121.92)
+		(uuid "20da1033-1ed7-4225-9219-478fee57ea62")
+	)
+	(no_connect
+		(at 232.41 127)
+		(uuid "bde902a8-b9e5-4c85-92b0-c84517b386f3")
+	)
+	(no_connect
+		(at 247.65 124.46)
+		(uuid "de0d8747-60a8-422e-b186-5ad7e542d40b")
 	)
 	(wire
 		(pts
@@ -2093,6 +2111,16 @@
 	)
 	(wire
 		(pts
+			(xy 184.15 93.98) (xy 186.69 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "179529c9-527d-42f0-ba72-f2b48c642d97")
+	)
+	(wire
+		(pts
 			(xy 80.01 48.26) (xy 80.01 50.8)
 		)
 		(stroke
@@ -2120,6 +2148,16 @@
 			(type default)
 		)
 		(uuid "1ff6291f-a782-47d9-918b-5f3463656890")
+	)
+	(wire
+		(pts
+			(xy 191.77 93.98) (xy 191.77 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "213575d4-b766-4651-9c16-ea388a711140")
 	)
 	(wire
 		(pts
@@ -2473,6 +2511,16 @@
 	)
 	(wire
 		(pts
+			(xy 191.77 116.84) (xy 191.77 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "844bd799-8575-44bc-bd77-02058fb97b95")
+	)
+	(wire
+		(pts
 			(xy 113.03 120.65) (xy 129.54 120.65)
 		)
 		(stroke
@@ -2550,6 +2598,16 @@
 			(type default)
 		)
 		(uuid "9aed499e-dae2-4940-af49-a05ebca4e98e")
+	)
+	(wire
+		(pts
+			(xy 186.69 105.41) (xy 186.69 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9c95bf0f-43b4-47ef-9e49-05fe904f280f")
 	)
 	(wire
 		(pts
@@ -2683,6 +2741,16 @@
 	)
 	(wire
 		(pts
+			(xy 186.69 97.79) (xy 186.69 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d0ca8065-8882-417f-877b-3c64775da188")
+	)
+	(wire
+		(pts
 			(xy 80.01 48.26) (xy 86.36 48.26)
 		)
 		(stroke
@@ -2803,16 +2871,6 @@
 	)
 	(wire
 		(pts
-			(xy 83.82 72.39) (xy 85.09 72.39)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ee8050ed-50ea-476b-9485-a2a83e163cb9")
-	)
-	(wire
-		(pts
 			(xy 88.9 90.17) (xy 88.9 95.25)
 		)
 		(stroke
@@ -2820,6 +2878,16 @@
 			(type default)
 		)
 		(uuid "efdd1825-4882-498a-bbb9-7f52028108df")
+	)
+	(wire
+		(pts
+			(xy 186.69 93.98) (xy 191.77 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f363ae22-514a-4d9e-acef-5e2627550316")
 	)
 	(wire
 		(pts
@@ -3028,6 +3096,17 @@
 		)
 		(uuid "9b38fc7a-a3d6-439d-8fb0-6af5590acef6")
 	)
+	(hierarchical_label "PWR_3.3V"
+		(shape input)
+		(at 184.15 93.98 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e5d8d0ca-8bd7-43df-908f-7404f60a0f4f")
+	)
 	(symbol
 		(lib_id "Driver_FET:IR2104")
 		(at 66.04 80.01 0)
@@ -3180,6 +3259,140 @@
 			(project "BLDC_motor_driver_testing"
 				(path "/4ecc7e27-f6b5-41f4-b6cd-6ae03975803c/e38af695-4296-4eb8-a85e-192699e3a5d3"
 					(reference "C20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 186.69 101.6 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "55a9de3f-0dbc-470e-a0a2-5cde9dd65584")
+		(property "Reference" "C23"
+			(at 179.832 105.918 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100n"
+			(at 179.578 103.886 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+			(at 187.6552 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 186.69 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 186.69 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "c64b80e7-9929-4403-9ca0-97e962dd3599")
+		)
+		(pin "1"
+			(uuid "800f7814-2c68-4eb7-a571-af8dbda53f1b")
+		)
+		(instances
+			(project "BLDC_motor_driver_testing"
+				(path "/4ecc7e27-f6b5-41f4-b6cd-6ae03975803c/e38af695-4296-4eb8-a85e-192699e3a5d3"
+					(reference "C23")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 186.69 106.68 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5a0ddc0c-60ef-44cf-bbdb-b77bbc31d18f")
+		(property "Reference" "#PWR041"
+			(at 186.69 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 186.69 110.744 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 186.69 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 186.69 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 186.69 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "15b5ba91-bd08-4e67-959b-b29c62908a92")
+		)
+		(instances
+			(project "BLDC_motor_driver_testing"
+				(path "/4ecc7e27-f6b5-41f4-b6cd-6ae03975803c/e38af695-4296-4eb8-a85e-192699e3a5d3"
+					(reference "#PWR041")
 					(unit 1)
 				)
 			)
@@ -3897,6 +4110,71 @@
 			(project "BLDC_motor_driver_testing"
 				(path "/4ecc7e27-f6b5-41f4-b6cd-6ae03975803c/e38af695-4296-4eb8-a85e-192699e3a5d3"
 					(reference "#PWR031")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 191.77 116.84 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "87beb5d6-5df7-4576-85b6-d63b2609b63d")
+		(property "Reference" "#PWR038"
+			(at 191.77 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 191.77 120.904 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 191.77 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 191.77 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 191.77 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b365befc-fd14-4a59-bdfa-4d2a4e171a72")
+		)
+		(instances
+			(project "BLDC_motor_driver_testing"
+				(path "/4ecc7e27-f6b5-41f4-b6cd-6ae03975803c/e38af695-4296-4eb8-a85e-192699e3a5d3"
+					(reference "#PWR038")
 					(unit 1)
 				)
 			)
@@ -4843,6 +5121,91 @@
 		)
 	)
 	(symbol
+		(lib_id "Comparator:LMV393")
+		(at 240.03 124.46 0)
+		(unit 2)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ee7a5a55-0d26-4cf5-9781-edb912bf5591")
+		(property "Reference" "U10"
+			(at 241.046 115.062 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LMV393"
+			(at 241.046 117.602 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_SO:VSSOP-8_2.3x2mm_P0.5mm"
+			(at 240.03 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lmv331.pdf"
+			(at 240.03 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Dual General-Purpose Low-Voltage Comparator, SOIC-8/TSSOP-8/VSSOP-8"
+			(at 240.03 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "8"
+			(uuid "df1250d4-a214-441c-b1ee-ffee1fe52654")
+		)
+		(pin "7"
+			(uuid "fb792a35-97bc-41b7-8b11-e9a539b6943e")
+		)
+		(pin "4"
+			(uuid "ddae9d09-f40e-46e5-ba6a-138799e6a8d7")
+		)
+		(pin "3"
+			(uuid "6346b94d-ff55-421c-87a5-c57f6a545e23")
+		)
+		(pin "2"
+			(uuid "4cd10b77-b9e9-4a80-8b81-6f6aac0fd3bb")
+		)
+		(pin "5"
+			(uuid "b7632e0b-f6e5-453b-90ab-5ea050823668")
+		)
+		(pin "1"
+			(uuid "b3490d59-2cf4-4880-9f84-7450818c9b54")
+		)
+		(pin "6"
+			(uuid "ccc78488-4ed9-4111-99ca-88635a694170")
+		)
+		(instances
+			(project "BLDC_motor_driver_testing"
+				(path "/4ecc7e27-f6b5-41f4-b6cd-6ae03975803c/e38af695-4296-4eb8-a85e-192699e3a5d3"
+					(reference "U10")
+					(unit 2)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 95.25 74.93 90)
 		(unit 1)
@@ -4905,6 +5268,94 @@
 				(path "/4ecc7e27-f6b5-41f4-b6cd-6ae03975803c/e38af695-4296-4eb8-a85e-192699e3a5d3"
 					(reference "R14")
 					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Comparator:LMV393")
+		(at 194.31 105.41 0)
+		(unit 3)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f6bf6728-beb9-4552-8599-5637c58976a3")
+		(property "Reference" "U10"
+			(at 193.04 104.1399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "LMV393"
+			(at 193.04 106.6799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SO:VSSOP-8_2.3x2mm_P0.5mm"
+			(at 194.31 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lmv331.pdf"
+			(at 194.31 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Dual General-Purpose Low-Voltage Comparator, SOIC-8/TSSOP-8/VSSOP-8"
+			(at 194.31 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "8"
+			(uuid "d70d2abe-168a-4713-9c67-a73095bbde92")
+		)
+		(pin "7"
+			(uuid "fb792a35-97bc-41b7-8b11-e9a539b6943e")
+		)
+		(pin "4"
+			(uuid "36d1848a-6cfa-42bb-84b1-90ad12a70569")
+		)
+		(pin "3"
+			(uuid "aa578fae-65e4-4804-ac6b-ef3e9920d795")
+		)
+		(pin "2"
+			(uuid "6fb49158-ccd6-429e-9764-a5528c823a74")
+		)
+		(pin "5"
+			(uuid "b7632e0b-f6e5-453b-90ab-5ea050823668")
+		)
+		(pin "1"
+			(uuid "03250601-9ff7-49c3-a9dd-27a9ddb88ba2")
+		)
+		(pin "6"
+			(uuid "ccc78488-4ed9-4111-99ca-88635a694170")
+		)
+		(instances
+			(project "BLDC_motor_driver_testing"
+				(path "/4ecc7e27-f6b5-41f4-b6cd-6ae03975803c/e38af695-4296-4eb8-a85e-192699e3a5d3"
+					(reference "U10")
+					(unit 3)
 				)
 			)
 		)
