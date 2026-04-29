@@ -1936,6 +1936,12 @@
 		(uuid "128c1445-d03f-44d4-b99a-1c3663257476")
 	)
 	(junction
+		(at 252.73 99.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "140b533e-d03c-4e93-b0f8-488b24626def")
+	)
+	(junction
 		(at 140.97 99.06)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1960,7 +1966,7 @@
 		(uuid "22cfbe09-4955-4bdc-9b99-b9b72edde54c")
 	)
 	(junction
-		(at 191.77 115.57)
+		(at 185.42 115.57)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "371a1ee9-94db-4eab-8869-fb346c9eec63")
@@ -1972,13 +1978,19 @@
 		(uuid "42920fe4-0f4c-4e8f-be3c-e6e2141a9d65")
 	)
 	(junction
+		(at 227.33 99.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "43085013-4c37-4670-8565-fa4709fc127d")
+	)
+	(junction
 		(at 107.95 115.57)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4914646a-a1a9-4c48-bf0a-15a547d318bd")
 	)
 	(junction
-		(at 233.68 113.03)
+		(at 227.33 113.03)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "54434ad8-7043-4886-8aed-4aeaf3ee3b85")
@@ -2014,7 +2026,7 @@
 		(uuid "8db365b3-0f91-4b04-92fe-63f02c30ed4d")
 	)
 	(junction
-		(at 191.77 99.06)
+		(at 185.42 99.06)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9c7410ea-29f9-4e2e-b0bc-b763e33f05ee")
@@ -2038,12 +2050,6 @@
 		(uuid "c46dc77d-3557-475a-bf3b-b19897537d7b")
 	)
 	(junction
-		(at 213.36 130.81)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e6274584-f9c0-4459-a873-832f80b654c9")
-	)
-	(junction
 		(at 58.42 100.33)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2054,6 +2060,44 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ebdc3d2d-c82f-42c5-9b5b-e11985ab0ac6")
+	)
+	(junction
+		(at 259.08 123.19)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f0346562-1935-40df-8168-5afab813606d")
+	)
+	(no_connect
+		(at 208.28 128.27)
+		(uuid "743599b3-1498-41e3-8402-e6f2e69c6869")
+	)
+	(no_connect
+		(at 208.28 133.35)
+		(uuid "deb9e327-94ca-43b7-bcfd-1a19fd0d0e33")
+	)
+	(no_connect
+		(at 223.52 130.81)
+		(uuid "eddd5e55-4eb6-4e87-8fd2-a0606de97c37")
+	)
+	(wire
+		(pts
+			(xy 265.43 115.57) (xy 265.43 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "02331359-7cfe-41b4-a807-c5afb086ab35")
+	)
+	(wire
+		(pts
+			(xy 252.73 104.14) (xy 252.73 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "027d71bf-1563-4921-8d7f-492cabe63dd2")
 	)
 	(wire
 		(pts
@@ -2067,7 +2111,7 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 99.06) (xy 191.77 99.06)
+			(xy 181.61 99.06) (xy 185.42 99.06)
 		)
 		(stroke
 			(width 0)
@@ -2117,7 +2161,7 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 115.57) (xy 214.63 115.57)
+			(xy 185.42 115.57) (xy 208.28 115.57)
 		)
 		(stroke
 			(width 0)
@@ -2137,6 +2181,16 @@
 	)
 	(wire
 		(pts
+			(xy 259.08 123.19) (xy 265.43 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "164ba64d-8ab4-49fb-8f16-c6acf3e59e04")
+	)
+	(wire
+		(pts
 			(xy 147.32 99.06) (xy 140.97 99.06)
 		)
 		(stroke
@@ -2147,17 +2201,17 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 130.81) (xy 191.77 130.81)
+			(xy 252.73 123.19) (xy 252.73 119.38)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1fc7a2ef-dd2a-4230-9b6c-5da0f3d0a089")
+		(uuid "2240f819-7909-4ddf-b40e-aff0de8bc943")
 	)
 	(wire
 		(pts
-			(xy 191.77 99.06) (xy 191.77 104.14)
+			(xy 185.42 99.06) (xy 185.42 104.14)
 		)
 		(stroke
 			(width 0)
@@ -2177,7 +2231,17 @@
 	)
 	(wire
 		(pts
-			(xy 201.93 110.49) (xy 214.63 110.49)
+			(xy 252.73 99.06) (xy 227.33 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2735d0e1-60dd-4d78-bc96-460dcc58120c")
+	)
+	(wire
+		(pts
+			(xy 195.58 110.49) (xy 208.28 110.49)
 		)
 		(stroke
 			(width 0)
@@ -2257,6 +2321,16 @@
 	)
 	(wire
 		(pts
+			(xy 265.43 99.06) (xy 252.73 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3c7786d3-534e-4224-b4d2-b91c07c502a3")
+	)
+	(wire
+		(pts
 			(xy 107.95 115.57) (xy 118.11 115.57)
 		)
 		(stroke
@@ -2307,7 +2381,7 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 111.76) (xy 191.77 115.57)
+			(xy 185.42 111.76) (xy 185.42 115.57)
 		)
 		(stroke
 			(width 0)
@@ -2487,6 +2561,16 @@
 	)
 	(wire
 		(pts
+			(xy 259.08 123.19) (xy 252.73 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "837300be-9c8f-4303-82ac-c01370a76aee")
+	)
+	(wire
+		(pts
 			(xy 66.04 80.01) (xy 80.01 80.01)
 		)
 		(stroke
@@ -2517,7 +2601,7 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 99.06) (xy 233.68 99.06)
+			(xy 185.42 99.06) (xy 227.33 99.06)
 		)
 		(stroke
 			(width 0)
@@ -2577,16 +2661,6 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 130.81) (xy 233.68 130.81)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9b06ecc5-cb60-4e73-89aa-7458e72d2127")
-	)
-	(wire
-		(pts
 			(xy 95.25 100.33) (xy 100.33 100.33)
 		)
 		(stroke
@@ -2597,7 +2671,7 @@
 	)
 	(wire
 		(pts
-			(xy 229.87 113.03) (xy 233.68 113.03)
+			(xy 223.52 113.03) (xy 227.33 113.03)
 		)
 		(stroke
 			(width 0)
@@ -2637,16 +2711,6 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 130.81) (xy 191.77 127)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a4598eea-9466-4445-b38a-cc1018c5abfc")
-	)
-	(wire
-		(pts
 			(xy 58.42 44.45) (xy 76.2 44.45)
 		)
 		(stroke
@@ -2667,7 +2731,7 @@
 	)
 	(wire
 		(pts
-			(xy 233.68 99.06) (xy 233.68 101.6)
+			(xy 227.33 99.06) (xy 227.33 101.6)
 		)
 		(stroke
 			(width 0)
@@ -2717,7 +2781,7 @@
 	)
 	(wire
 		(pts
-			(xy 233.68 113.03) (xy 242.57 113.03)
+			(xy 227.33 113.03) (xy 236.22 113.03)
 		)
 		(stroke
 			(width 0)
@@ -2767,7 +2831,7 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 130.81) (xy 213.36 133.35)
+			(xy 185.42 127) (xy 185.42 132.08)
 		)
 		(stroke
 			(width 0)
@@ -2807,6 +2871,16 @@
 	)
 	(wire
 		(pts
+			(xy 265.43 107.95) (xy 265.43 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ca201775-fc10-49d4-abfe-cb99d43635b0")
+	)
+	(wire
+		(pts
 			(xy 76.2 57.15) (xy 76.2 55.88)
 		)
 		(stroke
@@ -2817,7 +2891,7 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 115.57) (xy 191.77 119.38)
+			(xy 185.42 115.57) (xy 185.42 119.38)
 		)
 		(stroke
 			(width 0)
@@ -2927,7 +3001,7 @@
 	)
 	(wire
 		(pts
-			(xy 233.68 109.22) (xy 233.68 113.03)
+			(xy 227.33 109.22) (xy 227.33 113.03)
 		)
 		(stroke
 			(width 0)
@@ -2947,13 +3021,13 @@
 	)
 	(wire
 		(pts
-			(xy 233.68 113.03) (xy 233.68 130.81)
+			(xy 259.08 125.73) (xy 259.08 123.19)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "fd0ccb52-2c13-480e-9ede-a57f573999c8")
+		(uuid "fe62ac11-c2cb-49fd-a631-859ab66a0bf0")
 	)
 	(label "SD_A"
 		(at 44.45 87.63 0)
@@ -2966,7 +3040,7 @@
 		(uuid "2635df13-2377-47f3-985d-e3420faeae5f")
 	)
 	(label "SD_A"
-		(at 242.57 113.03 180)
+		(at 236.22 113.03 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2996,7 +3070,7 @@
 		(uuid "655d528b-cf17-4778-9aec-afdc2f3a3d56")
 	)
 	(label "VISENSE_A"
-		(at 201.93 110.49 0)
+		(at 195.58 110.49 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3029,7 +3103,7 @@
 	)
 	(hierarchical_label "PWR_3.3V"
 		(shape input)
-		(at 187.96 99.06 180)
+		(at 181.61 99.06 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3084,15 +3158,15 @@
 	)
 	(symbol
 		(lib_id "Comparator:LMV393")
-		(at 222.25 113.03 0)
-		(unit 1)
+		(at 255.27 111.76 0)
+		(unit 3)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "199ff10c-123b-4f08-a8db-5dea3dbaadf7")
+		(uuid "03b901ab-afe4-41a0-9e02-366878605309")
 		(property "Reference" "U4"
-			(at 223.266 103.632 0)
+			(at 256.286 102.362 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3100,7 +3174,7 @@
 			)
 		)
 		(property "Value" "LMV393"
-			(at 223.266 106.172 0)
+			(at 256.286 104.902 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3108,7 +3182,7 @@
 			)
 		)
 		(property "Footprint" "Package_SO:VSSOP-8_2.3x2mm_P0.5mm"
-			(at 222.25 113.03 0)
+			(at 255.27 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3117,7 +3191,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lmv331.pdf"
-			(at 222.25 113.03 0)
+			(at 255.27 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3126,7 +3200,92 @@
 			)
 		)
 		(property "Description" "Dual General-Purpose Low-Voltage Comparator, SOIC-8/TSSOP-8/VSSOP-8"
-			(at 222.25 113.03 0)
+			(at 255.27 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "8"
+			(uuid "df1250d4-a214-441c-b1ee-ffee1fe52654")
+		)
+		(pin "7"
+			(uuid "fb792a35-97bc-41b7-8b11-e9a539b6943e")
+		)
+		(pin "4"
+			(uuid "ddae9d09-f40e-46e5-ba6a-138799e6a8d7")
+		)
+		(pin "3"
+			(uuid "a15e0682-a30a-417d-b5c8-34402e4f69c5")
+		)
+		(pin "2"
+			(uuid "7b3fa255-60ee-4f26-8e13-1cd567b739ce")
+		)
+		(pin "5"
+			(uuid "b7632e0b-f6e5-453b-90ab-5ea050823668")
+		)
+		(pin "1"
+			(uuid "304c30bd-dea2-415c-9652-aef4c5feed36")
+		)
+		(pin "6"
+			(uuid "ccc78488-4ed9-4111-99ca-88635a694170")
+		)
+		(instances
+			(project "BLDC_motor_driver"
+				(path "/1217eed8-ee8e-4ad2-9f65-aaa3eab4838e/aab35023-a3fe-424f-b0db-c44ab5049a21"
+					(reference "U4")
+					(unit 3)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Comparator:LMV393")
+		(at 215.9 113.03 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "199ff10c-123b-4f08-a8db-5dea3dbaadf7")
+		(property "Reference" "U4"
+			(at 216.916 103.632 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LMV393"
+			(at 216.916 106.172 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_SO:VSSOP-8_2.3x2mm_P0.5mm"
+			(at 215.9 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lmv331.pdf"
+			(at 215.9 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Dual General-Purpose Low-Voltage Comparator, SOIC-8/TSSOP-8/VSSOP-8"
+			(at 215.9 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3592,7 +3751,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 191.77 123.19 180)
+		(at 185.42 123.19 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3600,7 +3759,7 @@
 		(dnp no)
 		(uuid "84f05759-92b8-4d52-ac2f-41fb29b74e9a")
 		(property "Reference" "R10"
-			(at 193.802 121.92 0)
+			(at 187.452 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3609,7 +3768,7 @@
 			)
 		)
 		(property "Value" "510R"
-			(at 193.802 124.46 0)
+			(at 187.452 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3618,7 +3777,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 193.548 123.19 90)
+			(at 187.198 123.19 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3627,7 +3786,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 191.77 123.19 0)
+			(at 185.42 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3636,7 +3795,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 191.77 123.19 0)
+			(at 185.42 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3661,7 +3820,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 191.77 107.95 180)
+		(at 185.42 107.95 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3669,7 +3828,7 @@
 		(dnp no)
 		(uuid "8aefc62d-9146-4386-bd94-35da3fa8a026")
 		(property "Reference" "R9"
-			(at 193.548 106.68 0)
+			(at 187.198 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3678,7 +3837,7 @@
 			)
 		)
 		(property "Value" "330R"
-			(at 193.548 109.22 0)
+			(at 187.198 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3687,7 +3846,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 193.548 107.95 90)
+			(at 187.198 107.95 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3696,7 +3855,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 191.77 107.95 0)
+			(at 185.42 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3705,7 +3864,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 191.77 107.95 0)
+			(at 185.42 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3799,6 +3958,91 @@
 		)
 	)
 	(symbol
+		(lib_id "Comparator:LMV393")
+		(at 215.9 130.81 0)
+		(unit 2)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "91d96408-9315-4253-87bd-6c2cf7af8300")
+		(property "Reference" "U4"
+			(at 216.916 121.412 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LMV393"
+			(at 216.916 123.952 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_SO:VSSOP-8_2.3x2mm_P0.5mm"
+			(at 215.9 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lmv331.pdf"
+			(at 215.9 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Dual General-Purpose Low-Voltage Comparator, SOIC-8/TSSOP-8/VSSOP-8"
+			(at 215.9 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "8"
+			(uuid "df1250d4-a214-441c-b1ee-ffee1fe52654")
+		)
+		(pin "7"
+			(uuid "fb792a35-97bc-41b7-8b11-e9a539b6943e")
+		)
+		(pin "4"
+			(uuid "ddae9d09-f40e-46e5-ba6a-138799e6a8d7")
+		)
+		(pin "3"
+			(uuid "75157c5f-6289-4574-8d45-6de0b0562784")
+		)
+		(pin "2"
+			(uuid "8bc8d93f-54e7-43d2-bbcf-a3d536bf49fb")
+		)
+		(pin "5"
+			(uuid "b7632e0b-f6e5-453b-90ab-5ea050823668")
+		)
+		(pin "1"
+			(uuid "ebce7e8c-37de-42cd-abdd-6a7689ebf927")
+		)
+		(pin "6"
+			(uuid "ccc78488-4ed9-4111-99ca-88635a694170")
+		)
+		(instances
+			(project "BLDC_motor_driver"
+				(path "/1217eed8-ee8e-4ad2-9f65-aaa3eab4838e/aab35023-a3fe-424f-b0db-c44ab5049a21"
+					(reference "U4")
+					(unit 2)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Diode:1N4148W")
 		(at 66.04 69.85 180)
 		(unit 1)
@@ -3878,6 +4122,75 @@
 			(project ""
 				(path "/1217eed8-ee8e-4ad2-9f65-aaa3eab4838e/aab35023-a3fe-424f-b0db-c44ab5049a21"
 					(reference "D3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 265.43 111.76 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9934d1c6-7e39-4da0-95d2-2dba15c0775f")
+		(property "Reference" "C30"
+			(at 269.24 112.776 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100n"
+			(at 268.986 110.744 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 266.3952 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 265.43 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 265.43 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "73ae9fbe-aca6-4ab3-86ca-40fe55f80368")
+		)
+		(pin "1"
+			(uuid "ac6c5d52-6653-4d9d-90b6-0b0b012cb839")
+		)
+		(instances
+			(project "BLDC_motor_driver"
+				(path "/1217eed8-ee8e-4ad2-9f65-aaa3eab4838e/aab35023-a3fe-424f-b0db-c44ab5049a21"
+					(reference "C30")
 					(unit 1)
 				)
 			)
@@ -4324,7 +4637,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 233.68 105.41 180)
+		(at 227.33 105.41 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4332,7 +4645,7 @@
 		(dnp no)
 		(uuid "db5a2f2a-da19-44f0-9253-48f664047492")
 		(property "Reference" "R11"
-			(at 235.712 104.14 0)
+			(at 229.362 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4341,7 +4654,7 @@
 			)
 		)
 		(property "Value" "4.7K"
-			(at 235.712 106.68 0)
+			(at 229.362 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4350,7 +4663,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 235.458 105.41 90)
+			(at 229.108 105.41 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4359,7 +4672,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 233.68 105.41 0)
+			(at 227.33 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4368,7 +4681,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 233.68 105.41 0)
+			(at 227.33 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4393,7 +4706,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 213.36 133.35 0)
+		(at 185.42 132.08 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4401,7 +4714,7 @@
 		(dnp no)
 		(uuid "ded0ece6-a846-40fc-b14d-7e69ae749396")
 		(property "Reference" "#PWR027"
-			(at 213.36 139.7 0)
+			(at 185.42 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4410,7 +4723,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 213.36 137.414 0)
+			(at 185.42 136.144 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4418,7 +4731,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 213.36 133.35 0)
+			(at 185.42 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4427,7 +4740,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 213.36 133.35 0)
+			(at 185.42 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4436,7 +4749,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 213.36 133.35 0)
+			(at 185.42 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4967,6 +5280,71 @@
 			(project "BLDC_motor_driver"
 				(path "/1217eed8-ee8e-4ad2-9f65-aaa3eab4838e/aab35023-a3fe-424f-b0db-c44ab5049a21"
 					(reference "D4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 259.08 125.73 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fd5be7c5-e267-4d18-a2b3-ca621230f230")
+		(property "Reference" "#PWR030"
+			(at 259.08 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 259.08 129.794 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 259.08 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 259.08 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 259.08 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cc3b9878-70b2-4dab-854c-35e68aa8bb9a")
+		)
+		(instances
+			(project "BLDC_motor_driver"
+				(path "/1217eed8-ee8e-4ad2-9f65-aaa3eab4838e/aab35023-a3fe-424f-b0db-c44ab5049a21"
+					(reference "#PWR030")
 					(unit 1)
 				)
 			)
