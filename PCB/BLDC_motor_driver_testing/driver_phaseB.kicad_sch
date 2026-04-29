@@ -4222,7 +4222,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.2u"
+		(property "Value" "22u"
 			(at 76.708 81.28 0)
 			(effects
 				(font
@@ -4963,13 +4963,13 @@
 			)
 		)
 		(pin "8"
-			(uuid "df1250d4-a214-441c-b1ee-ffee1fe52654")
+			(uuid "df1250d4-a214-441c-b1ee-ffee1fe52655")
 		)
 		(pin "7"
 			(uuid "fb792a35-97bc-41b7-8b11-e9a539b6943e")
 		)
 		(pin "4"
-			(uuid "ddae9d09-f40e-46e5-ba6a-138799e6a8d7")
+			(uuid "ddae9d09-f40e-46e5-ba6a-138799e6a8d8")
 		)
 		(pin "3"
 			(uuid "aa578fae-65e4-4804-ac6b-ef3e9920d795")
@@ -5329,13 +5329,13 @@
 			)
 		)
 		(pin "8"
-			(uuid "df1250d4-a214-441c-b1ee-ffee1fe52654")
+			(uuid "df1250d4-a214-441c-b1ee-ffee1fe52656")
 		)
 		(pin "7"
-			(uuid "fb792a35-97bc-41b7-8b11-e9a539b6943e")
+			(uuid "fb792a35-97bc-41b7-8b11-e9a539b6943f")
 		)
 		(pin "4"
-			(uuid "ddae9d09-f40e-46e5-ba6a-138799e6a8d7")
+			(uuid "ddae9d09-f40e-46e5-ba6a-138799e6a8d9")
 		)
 		(pin "3"
 			(uuid "f02f6cfc-370d-4ee5-8792-b00f914f2dee")
@@ -5344,13 +5344,13 @@
 			(uuid "a1002949-6933-4de0-8732-e0922aeb5516")
 		)
 		(pin "5"
-			(uuid "b7632e0b-f6e5-453b-90ab-5ea050823668")
+			(uuid "b7632e0b-f6e5-453b-90ab-5ea050823669")
 		)
 		(pin "1"
 			(uuid "d2f2e189-2030-49dd-965e-0ba1446e7b9e")
 		)
 		(pin "6"
-			(uuid "ccc78488-4ed9-4111-99ca-88635a694170")
+			(uuid "ccc78488-4ed9-4111-99ca-88635a694171")
 		)
 		(instances
 			(project "BLDC_motor_driver_testing"
