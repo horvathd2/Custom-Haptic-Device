@@ -1969,15 +1969,15 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "12V 40A max"
+	(text "12V 20A max FOC\n	  30A max TOTAL"
 		(exclude_from_sim no)
-		(at 100.076 109.22 0)
+		(at 98.806 110.49 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 		)
-		(uuid "63285de7-9c35-4aa3-a6ac-7ceafd08f450")
+		(uuid "47ca27e2-2350-46a5-9132-7c2e2e90febd")
 	)
 	(text "G_A2 - 50V/V\nV_out = G * I * R_snt\nV_out_a2 = 50 * 0.001 * I\nV_out_a2_max = 0.05 * 40A\nV_out_a2_max = 2V"
 		(exclude_from_sim no)
@@ -1991,7 +1991,7 @@
 	)
 	(text "P_res = I_max^2*R\nP_res = 40^2*0.001R\nP_res = 1.6W =>\nP_res = 3W"
 		(exclude_from_sim no)
-		(at 100.076 114.808 0)
+		(at 100.076 119.38 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4125,7 +4125,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "330R"
+		(property "Value" "1K"
 			(at 211.328 104.14 0)
 			(effects
 				(font
@@ -4194,7 +4194,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "510R"
+		(property "Value" "10K"
 			(at 211.582 119.38 0)
 			(effects
 				(font
@@ -4802,7 +4802,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1mR"
+		(property "Value" "3mR"
 			(at 115.57 116.8399 0)
 			(effects
 				(font

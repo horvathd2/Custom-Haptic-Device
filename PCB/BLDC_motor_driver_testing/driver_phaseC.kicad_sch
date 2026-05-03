@@ -1969,17 +1969,17 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "12V 40A max"
+	(text "TODO:\n- BOOTSTRAP CAP CALCULATIONS\n- SHUNT SELECTION (CURRENT RANGE SELECTION)\n- GAIN SELECTION (PROBABLY WILL REMAIN A2)\n- COMPONENT DEFINITION + DATASHEETS (CAP VOLTAGE, PACKAGE ETC)"
 		(exclude_from_sim no)
-		(at 100.584 108.712 0)
+		(at 187.96 146.558 0)
 		(effects
 			(font
-				(size 1.27 1.27)
+				(size 2.54 2.54)
 			)
 		)
-		(uuid "63285de7-9c35-4aa3-a6ac-7ceafd08f450")
+		(uuid "8a0c3ae9-b66a-4b1a-9154-97646dcf1d89")
 	)
-	(text "G_A2 - 50V/V\nV_out = G * I * R_snt\nV_out_a2 = 50 * 0.001 * I\nV_out_a2_max = 0.05 * 40A\nV_out_a2_max = 2V"
+	(text "G_A2 - 50V/V\nV_out = G * I * R_snt\nV_out_a2 = 50 * 0.003 * I\nV_out_a2_max = 0.15 * 20A\nV_out_a2_max = 3V"
 		(exclude_from_sim no)
 		(at 126.238 134.366 0)
 		(effects
@@ -1989,9 +1989,9 @@
 		)
 		(uuid "910ccfb7-681a-48f9-8e2e-63603f53e558")
 	)
-	(text "P_res = I_max^2*R\nP_res = 40^2*0.001R\nP_res = 1.6W =>\nP_res = 3W"
+	(text "P_res = I_max^2*R\nP_res = 20^2*0.003R\nP_res = 2.7W =>\nP_res = 3W"
 		(exclude_from_sim no)
-		(at 100.076 114.808 0)
+		(at 100.33 120.142 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2008,6 +2008,16 @@
 			)
 		)
 		(uuid "c878b1ec-3c9b-4410-86c0-3efe614bd326")
+	)
+	(text "12V 20A max FOC"
+		(exclude_from_sim no)
+		(at 98.806 111.506 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "cb627f5d-8506-4c47-b719-deb0ff82b2c6")
 	)
 	(junction
 		(at 88.9 74.93)
@@ -4820,7 +4830,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1mR"
+		(property "Value" "3mR"
 			(at 115.57 116.8399 0)
 			(effects
 				(font
@@ -5108,7 +5118,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "510R"
+		(property "Value" "10K"
 			(at 211.582 119.38 0)
 			(effects
 				(font
@@ -5177,7 +5187,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "330R"
+		(property "Value" "1K"
 			(at 211.328 104.14 0)
 			(effects
 				(font
