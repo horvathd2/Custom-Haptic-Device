@@ -1969,7 +1969,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "TODO:\n- BOOTSTRAP CAP CALCULATIONS\n- SHUNT SELECTION (CURRENT RANGE SELECTION)\n- GAIN SELECTION (PROBABLY WILL REMAIN A2)\n- COMPONENT DEFINITION + DATASHEETS (CAP VOLTAGE, PACKAGE ETC)"
+	(text "TODO:\n- BOOTSTRAP CAP CALCULATIONS (DONE)\n- SHUNT SELECTION (CURRENT RANGE SELECTION)\n- COMPONENT DEFINITION + DATASHEETS (CAP VOLTAGE, PACKAGE ETC)"
 		(exclude_from_sim no)
 		(at 187.96 146.558 0)
 		(effects
@@ -1979,9 +1979,9 @@
 		)
 		(uuid "8a0c3ae9-b66a-4b1a-9154-97646dcf1d89")
 	)
-	(text "G_A2 - 50V/V\nV_out = G * I * R_snt\nV_out_a2 = 50 * 0.003 * I\nV_out_a2_max = 0.15 * 20A\nV_out_a2_max = 3V"
+	(text "G_A2 - 50V/V\nV_out = G * I * R_snt + Vref\nV_out_a2 = 50 * 0.0012 * I + 1.65\nV_out_a2_max = 0.06 * 20A + 1.65\nV_out_a2_max = 1.2 +1.65 = 2.85V at 20A"
 		(exclude_from_sim no)
-		(at 126.238 134.366 0)
+		(at 120.904 137.414 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1989,9 +1989,19 @@
 		)
 		(uuid "910ccfb7-681a-48f9-8e2e-63603f53e558")
 	)
-	(text "P_res = I_max^2*R\nP_res = 20^2*0.003R\nP_res = 2.7W =>\nP_res = 3W"
+	(text "Threshold set to 3V via 1k and 10k divider"
 		(exclude_from_sim no)
-		(at 100.33 120.142 0)
+		(at 230.378 90.424 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "93c0937e-2812-4e83-90e7-357ee121b8f8")
+	)
+	(text "P_res = I_max^2*R\nP_res = 20^2*0.0012R\nP_res = 0.48W =>\nP_res = 2W"
+		(exclude_from_sim no)
+		(at 98.806 118.364 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2078,6 +2088,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "64db7858-cdaf-4d23-9923-418251d311f3")
+	)
+	(junction
+		(at 191.77 114.3)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6f5dfeb2-7fb2-44bb-9a68-e65e52171ba2")
 	)
 	(junction
 		(at 83.82 72.39)
@@ -2256,6 +2272,16 @@
 			(type default)
 		)
 		(uuid "213575d4-b766-4651-9c16-ea388a711140")
+	)
+	(wire
+		(pts
+			(xy 191.77 114.3) (xy 191.77 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2509f98e-1db7-4899-aecc-5855761d1a18")
 	)
 	(wire
 		(pts
@@ -2519,6 +2545,16 @@
 	)
 	(wire
 		(pts
+			(xy 186.69 114.3) (xy 191.77 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "763236af-f3fb-4b9e-97ee-9b7e351f2e8b")
+	)
+	(wire
+		(pts
 			(xy 66.04 64.77) (xy 71.12 64.77)
 		)
 		(stroke
@@ -2579,7 +2615,7 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 116.84) (xy 191.77 113.03)
+			(xy 191.77 116.84) (xy 191.77 114.3)
 		)
 		(stroke
 			(width 0)
@@ -2669,7 +2705,7 @@
 	)
 	(wire
 		(pts
-			(xy 186.69 105.41) (xy 186.69 106.68)
+			(xy 186.69 109.22) (xy 186.69 114.3)
 		)
 		(stroke
 			(width 0)
@@ -2829,7 +2865,7 @@
 	)
 	(wire
 		(pts
-			(xy 186.69 97.79) (xy 186.69 93.98)
+			(xy 186.69 101.6) (xy 186.69 93.98)
 		)
 		(stroke
 			(width 0)
@@ -3520,7 +3556,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 186.69 101.6 0)
+		(at 186.69 105.41 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3528,7 +3564,7 @@
 		(dnp no)
 		(uuid "55a9de3f-0dbc-470e-a0a2-5cde9dd65584")
 		(property "Reference" "C23"
-			(at 179.832 105.918 0)
+			(at 178.816 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3537,7 +3573,7 @@
 			)
 		)
 		(property "Value" "100n"
-			(at 179.578 103.886 0)
+			(at 178.562 104.648 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3546,7 +3582,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
-			(at 187.6552 105.41 0)
+			(at 187.6552 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3555,7 +3591,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 186.69 101.6 0)
+			(at 186.69 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3564,7 +3600,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 186.69 101.6 0)
+			(at 186.69 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3649,71 +3685,6 @@
 			(project "BLDC_motor_driver_testing"
 				(path "/4ecc7e27-f6b5-41f4-b6cd-6ae03975803c/e38af695-4296-4eb8-a85e-192699e3a5d3"
 					(reference "NT5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 186.69 106.68 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "5a0ddc0c-60ef-44cf-bbdb-b77bbc31d18f")
-		(property "Reference" "#PWR041"
-			(at 186.69 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 186.69 110.744 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 186.69 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 186.69 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 186.69 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "15b5ba91-bd08-4e67-959b-b29c62908a92")
-		)
-		(instances
-			(project "BLDC_motor_driver_testing"
-				(path "/4ecc7e27-f6b5-41f4-b6cd-6ae03975803c/e38af695-4296-4eb8-a85e-192699e3a5d3"
-					(reference "#PWR041")
 					(unit 1)
 				)
 			)
@@ -4830,7 +4801,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "3mR"
+		(property "Value" "1.2mR"
 			(at 115.57 116.8399 0)
 			(effects
 				(font
@@ -4899,7 +4870,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "22u"
+		(property "Value" "2.2u"
 			(at 76.708 81.28 0)
 			(effects
 				(font
@@ -4908,7 +4879,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 84.7852 83.82 0)
 			(effects
 				(font

@@ -1969,35 +1969,25 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "12V 20A max FOC\n	  30A max TOTAL"
+	(text "12V 20A max FOC"
 		(exclude_from_sim no)
-		(at 99.06 107.95 0)
+		(at 100.584 111.76 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 		)
-		(uuid "63285de7-9c35-4aa3-a6ac-7ceafd08f450")
+		(uuid "7989475f-b303-46a7-8992-bd83082a565d")
 	)
-	(text "G_A2 - 50V/V\nV_out = G * I * R_snt\nV_out_a2 = 50 * 0.001 * I\nV_out_a2_max = 0.05 * 40A\nV_out_a2_max = 2V"
+	(text "G_A2 - 50V/V\nV_out = G * I * R_snt + Vref\nV_out_a2 = 50 * 0.0012 * I + 1.65\nV_out_a2_max = 0.06 * 20A + 1.65\nV_out_a2_max = 1.2 +1.65 = 2.85V at 20A"
 		(exclude_from_sim no)
-		(at 124.714 135.128 0)
+		(at 122.682 137.668 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 		)
-		(uuid "910ccfb7-681a-48f9-8e2e-63603f53e558")
-	)
-	(text "P_res = I_max^2*R\nP_res = 40^2*0.001R\nP_res = 1.6W =>\nP_res = 3W"
-		(exclude_from_sim no)
-		(at 99.314 117.348 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "9e8227a9-9e46-4065-a1c0-cbcc0e1dbb0a")
+		(uuid "a3c06985-df7e-42cc-b0e6-e49b8394ba83")
 	)
 	(text "BLDC Driver Phase B"
 		(exclude_from_sim no)
@@ -2008,6 +1998,16 @@
 			)
 		)
 		(uuid "c878b1ec-3c9b-4410-86c0-3efe614bd326")
+	)
+	(text "P_res = I_max^2*R\nP_res = 20^2*0.0012R\nP_res = 0.48W =>\nP_res = 2W"
+		(exclude_from_sim no)
+		(at 100.584 118.618 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "ff11fc09-0e15-4c31-a129-f8b8f6e7e994")
 	)
 	(junction
 		(at 86.36 35.56)
@@ -2062,6 +2062,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "51410088-ac50-4b5b-9959-e30cbdc4ee04")
+	)
+	(junction
+		(at 191.77 114.3)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5d6553f8-7d12-4c24-a5ce-9105d878ca9d")
 	)
 	(junction
 		(at 143.51 129.54)
@@ -2149,7 +2155,7 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 116.84) (xy 191.77 113.03)
+			(xy 191.77 116.84) (xy 191.77 114.3)
 		)
 		(stroke
 			(width 0)
@@ -2309,6 +2315,16 @@
 	)
 	(wire
 		(pts
+			(xy 185.42 109.22) (xy 185.42 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "41df1715-efb6-4b20-8106-b55e12afd182")
+	)
+	(wire
+		(pts
 			(xy 143.51 129.54) (xy 160.02 129.54)
 		)
 		(stroke
@@ -2416,16 +2432,6 @@
 			(type default)
 		)
 		(uuid "5d1bdcbc-fbe8-44ac-945b-49186f65fe6e")
-	)
-	(wire
-		(pts
-			(xy 185.42 105.41) (xy 185.42 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5d500c98-f1ee-482b-924c-a23c185060c6")
 	)
 	(wire
 		(pts
@@ -2679,6 +2685,16 @@
 	)
 	(wire
 		(pts
+			(xy 191.77 114.3) (xy 191.77 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "987c4dea-c5a1-4386-a25f-53b870c704fa")
+	)
+	(wire
+		(pts
 			(xy 91.44 69.85) (xy 88.9 69.85)
 		)
 		(stroke
@@ -2689,7 +2705,7 @@
 	)
 	(wire
 		(pts
-			(xy 185.42 97.79) (xy 185.42 93.98)
+			(xy 185.42 101.6) (xy 185.42 93.98)
 		)
 		(stroke
 			(width 0)
@@ -2776,6 +2792,16 @@
 			(type default)
 		)
 		(uuid "b772a718-1029-4dbe-8962-c2fb33f0b236")
+	)
+	(wire
+		(pts
+			(xy 185.42 114.3) (xy 191.77 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b86c484e-5568-48ea-b7b4-3f62a34b8b2d")
 	)
 	(wire
 		(pts
@@ -4045,7 +4071,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "3mR"
+		(property "Value" "1.2mR"
 			(at 114.554 116.586 0)
 			(effects
 				(font
@@ -4471,7 +4497,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "22u"
+		(property "Value" "2.2u"
 			(at 76.708 81.28 0)
 			(effects
 				(font
@@ -4480,7 +4506,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 84.7852 83.82 0)
 			(effects
 				(font
@@ -5185,7 +5211,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 185.42 101.6 0)
+		(at 185.42 105.41 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5193,7 +5219,7 @@
 		(dnp no)
 		(uuid "de7212ec-131a-45dd-afb1-12f1138427a0")
 		(property "Reference" "C21"
-			(at 178.562 105.918 0)
+			(at 177.8 106.172 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5202,7 +5228,7 @@
 			)
 		)
 		(property "Value" "100n"
-			(at 178.308 103.886 0)
+			(at 177.546 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5211,7 +5237,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
-			(at 186.3852 105.41 0)
+			(at 186.3852 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5220,7 +5246,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 185.42 101.6 0)
+			(at 185.42 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5229,7 +5255,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 185.42 101.6 0)
+			(at 185.42 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5533,71 +5559,6 @@
 			(project "BLDC_motor_driver_testing"
 				(path "/4ecc7e27-f6b5-41f4-b6cd-6ae03975803c/84a85dbb-6ec3-48bc-bc0c-ced3ee7759cd"
 					(reference "R7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 185.42 106.68 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "f67136e0-54d7-47a2-ae70-ba7b73ed46bf")
-		(property "Reference" "#PWR039"
-			(at 185.42 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 185.42 110.744 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 185.42 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 185.42 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 185.42 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "0f608d2c-2e5f-4d17-b654-ee16c8ca466b")
-		)
-		(instances
-			(project "BLDC_motor_driver_testing"
-				(path "/4ecc7e27-f6b5-41f4-b6cd-6ae03975803c/84a85dbb-6ec3-48bc-bc0c-ced3ee7759cd"
-					(reference "#PWR039")
 					(unit 1)
 				)
 			)
