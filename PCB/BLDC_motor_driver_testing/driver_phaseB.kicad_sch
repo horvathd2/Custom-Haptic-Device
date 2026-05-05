@@ -3367,6 +3367,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" "C2976899"
+			(at 86.36 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "4680e064-36f0-4946-b512-39c37b88096f")
 		)
@@ -3635,7 +3644,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SO:VSSOP-8_2.3x2mm_P0.5mm"
+		(property "Footprint" "Package_SO:VSSOP-8_3x3mm_P0.65mm"
 			(at 240.03 124.46 0)
 			(effects
 				(font
@@ -3654,6 +3663,15 @@
 			)
 		)
 		(property "Description" "Dual General-Purpose Low-Voltage Comparator, SOIC-8/TSSOP-8/VSSOP-8"
+			(at 240.03 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C352866"
 			(at 240.03 124.46 0)
 			(effects
 				(font
@@ -3930,7 +3948,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "470u"
+		(property "Value" "220u"
 			(at 77.47 42.2909 0)
 			(effects
 				(font
@@ -3958,6 +3976,15 @@
 			)
 		)
 		(property "Description" "Polarized capacitor"
+			(at 73.66 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C3340"
 			(at 73.66 41.91 0)
 			(effects
 				(font
@@ -4092,6 +4119,15 @@
 			)
 		)
 		(property "Description" "High- and Low-Side, Bidirectional, Zero-Drift, Current-Sense Amplifier With Enhanced PWM Rejection, 50V/V, SOIC-8"
+			(at 146.05 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C2060768"
 			(at 146.05 115.57 0)
 			(effects
 				(font
@@ -4528,6 +4564,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" "C342739"
+			(at 83.82 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "a41343ad-b2d9-4f07-950e-386df3475d2a")
 		)
@@ -4856,6 +4901,15 @@
 			)
 		)
 		(property "Description" "1W shunt resistor for current sensing"
+			(at 113.03 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C51934143"
 			(at 113.03 115.57 0)
 			(effects
 				(font
@@ -5205,7 +5259,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:VSSOP-8_2.3x2mm_P0.5mm"
+		(property "Footprint" "Package_SO:VSSOP-8_3x3mm_P0.65mm"
 			(at 194.31 105.41 0)
 			(effects
 				(font
@@ -5224,6 +5278,15 @@
 			)
 		)
 		(property "Description" "Dual General-Purpose Low-Voltage Comparator, SOIC-8/TSSOP-8/VSSOP-8"
+			(at 194.31 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C352866"
 			(at 194.31 105.41 0)
 			(effects
 				(font
@@ -5506,7 +5569,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SO:VSSOP-8_2.3x2mm_P0.5mm"
+		(property "Footprint" "Package_SO:VSSOP-8_3x3mm_P0.65mm"
 			(at 240.03 107.95 0)
 			(effects
 				(font
@@ -5525,6 +5588,15 @@
 			)
 		)
 		(property "Description" "Dual General-Purpose Low-Voltage Comparator, SOIC-8/TSSOP-8/VSSOP-8"
+			(at 240.03 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C352866"
 			(at 240.03 107.95 0)
 			(effects
 				(font

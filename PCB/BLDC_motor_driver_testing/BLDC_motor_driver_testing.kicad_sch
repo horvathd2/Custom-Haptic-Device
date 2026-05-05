@@ -3512,6 +3512,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" "C557686"
+			(at 113.03 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "935dedcd-534d-4096-acba-52159e0739a4")
 		)
@@ -3649,6 +3658,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" "C338080"
+			(at 129.54 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "f1a19ffd-4fb1-4849-8268-685f01e18fbf")
 		)
@@ -3742,7 +3760,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "2cfbd841-7bec-4f49-b090-7e1ba0141384")
 		(property "Reference" "J1"
 			(at 57.15 87.63 0)
@@ -3780,6 +3797,15 @@
 		)
 		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
 			(at 57.15 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C557685"
+			(at 57.658 101.092 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4181,6 +4207,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" "C557686"
+			(at 113.03 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "f6d2e062-a8a5-4423-8bc0-7f2fb3b99060")
 		)
@@ -4374,6 +4409,15 @@
 			)
 		)
 		(property "Description" "1A Low Dropout regulator, positive, 3.3V fixed output, SOT-223"
+			(at 116.84 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C6186"
 			(at 116.84 91.44 0)
 			(effects
 				(font
@@ -4707,6 +4751,15 @@
 			)
 		)
 		(property "Description" "Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 113.03 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C557686"
 			(at 113.03 124.46 0)
 			(effects
 				(font
