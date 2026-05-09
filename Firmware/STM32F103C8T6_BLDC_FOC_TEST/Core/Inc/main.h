@@ -61,6 +61,8 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define BLDC_EN_Pin GPIO_PIN_1
 #define BLDC_EN_GPIO_Port GPIOB
+#define DEBUG_PIN_Pin GPIO_PIN_12
+#define DEBUG_PIN_GPIO_Port GPIOA
 
 /* USER CODE BEGIN Private defines */
 

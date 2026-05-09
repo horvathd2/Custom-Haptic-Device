@@ -52,27 +52,6 @@
 
 /* USER CODE END FunctionPrototypes */
 
-/* Hook prototypes */
-void vApplicationStackOverflowHook(xTaskHandle xTask, signed char *pcTaskName);
-
-/* USER CODE BEGIN 4 */
-void vApplicationStackOverflowHook(xTaskHandle xTask, signed char *pcTaskName)
-{
-   /* Run time stack overflow checking is performed if
-   configCHECK_FOR_STACK_OVERFLOW is defined to 1 or 2. This hook function is
-   called if a stack overflow is detected. */
-}
-/* USER CODE END 4 */
-
-/* USER CODE BEGIN VPORT_SUPPORT_TICKS_AND_SLEEP */
-__weak void vPortSuppressTicksAndSleep( TickType_t xExpectedIdleTime )
-{
-  // Generated when configUSE_TICKLESS_IDLE == 2.
-  // Function called in tasks.c (in portTASK_FUNCTION).
-  // TO BE COMPLETED or TO BE REPLACED by a user one, overriding that weak one.
-}
-/* USER CODE END VPORT_SUPPORT_TICKS_AND_SLEEP */
-
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
 
