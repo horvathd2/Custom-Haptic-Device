@@ -27,6 +27,7 @@
 #include "foc.h"
 #include "usbd_cdc_if.h"
 #include "string.h"
+#include "math.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -48,6 +49,7 @@ typedef StaticTask_t osStaticThreadDef_t;
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc1;
 ADC_HandleTypeDef hadc2;
+ADC_HandleTypeDef hadc3;
 
 I2C_HandleTypeDef hi2c1;
 
@@ -55,7 +57,7 @@ TIM_HandleTypeDef htim1;
 
 /* Definitions for mainTask1 */
 osThreadId_t mainTask1Handle;
-uint32_t defaultTaskBuffer[ 2024 ];
+uint32_t defaultTaskBuffer[ 2048 ];
 osStaticThreadDef_t defaultTaskControlBlock;
 const osThreadAttr_t mainTask1_attributes = {
   .name = "mainTask1",
@@ -64,6 +66,18 @@ const osThreadAttr_t mainTask1_attributes = {
   .stack_mem = &defaultTaskBuffer[0],
   .stack_size = sizeof(defaultTaskBuffer),
   .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for debugTask */
+osThreadId_t debugTaskHandle;
+uint32_t debugTaskBuffer[ 1024 ];
+osStaticThreadDef_t debugTaskControlBlock;
+const osThreadAttr_t debugTask_attributes = {
+  .name = "debugTask",
+  .cb_mem = &debugTaskControlBlock,
+  .cb_size = sizeof(debugTaskControlBlock),
+  .stack_mem = &debugTaskBuffer[0],
+  .stack_size = sizeof(debugTaskBuffer),
+  .priority = (osPriority_t) osPriorityLow,
 };
 /* USER CODE BEGIN PV */
 
@@ -76,7 +90,9 @@ static void MX_ADC1_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_ADC2_Init(void);
 static void MX_I2C1_Init(void);
+static void MX_ADC3_Init(void);
 void main_task1(void *argument);
+void debug_main(void *argument);
 
 /* USER CODE BEGIN PFP */
 
@@ -120,6 +136,7 @@ int main(void)
   MX_TIM1_Init();
   MX_ADC2_Init();
   MX_I2C1_Init();
+  MX_ADC3_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -146,6 +163,9 @@ int main(void)
   /* Create the thread(s) */
   /* creation of mainTask1 */
   mainTask1Handle = osThreadNew(main_task1, NULL, &mainTask1_attributes);
+
+  /* creation of debugTask */
+  debugTaskHandle = osThreadNew(debug_main, NULL, &debugTask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
 	/* add threads, ... */
@@ -259,7 +279,7 @@ static void MX_ADC1_Init(void)
 
   /** Configure the ADC multi-mode
   */
-  multimode.Mode = ADC_DUALMODE_INJECSIMULT;
+  multimode.Mode = ADC_TRIPLEMODE_INJECSIMULT;
   multimode.TwoSamplingDelay = ADC_TWOSAMPLINGDELAY_5CYCLES;
   if (HAL_ADCEx_MultiModeConfigChannel(&hadc1, &multimode) != HAL_OK)
   {
@@ -268,7 +288,7 @@ static void MX_ADC1_Init(void)
 
   /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
   */
-  sConfig.Channel = ADC_CHANNEL_2;
+  sConfig.Channel = ADC_CHANNEL_10;
   sConfig.Rank = 1;
   sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
@@ -278,7 +298,7 @@ static void MX_ADC1_Init(void)
 
   /** Configures for the selected ADC injected channel its corresponding rank in the sequencer and its sample time
   */
-  sConfigInjected.InjectedChannel = ADC_CHANNEL_2;
+  sConfigInjected.InjectedChannel = ADC_CHANNEL_10;
   sConfigInjected.InjectedRank = 1;
   sConfigInjected.InjectedNbrOfConversion = 1;
   sConfigInjected.InjectedSamplingTime = ADC_SAMPLETIME_15CYCLES;
@@ -335,7 +355,7 @@ static void MX_ADC2_Init(void)
 
   /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
   */
-  sConfig.Channel = ADC_CHANNEL_3;
+  sConfig.Channel = ADC_CHANNEL_11;
   sConfig.Rank = 1;
   sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
   if (HAL_ADC_ConfigChannel(&hadc2, &sConfig) != HAL_OK)
@@ -345,7 +365,7 @@ static void MX_ADC2_Init(void)
 
   /** Configures for the selected ADC injected channel its corresponding rank in the sequencer and its sample time
   */
-  sConfigInjected.InjectedChannel = ADC_CHANNEL_3;
+  sConfigInjected.InjectedChannel = ADC_CHANNEL_11;
   sConfigInjected.InjectedRank = 1;
   sConfigInjected.InjectedNbrOfConversion = 1;
   sConfigInjected.InjectedSamplingTime = ADC_SAMPLETIME_15CYCLES;
@@ -359,6 +379,71 @@ static void MX_ADC2_Init(void)
   /* USER CODE BEGIN ADC2_Init 2 */
 
   /* USER CODE END ADC2_Init 2 */
+
+}
+
+/**
+  * @brief ADC3 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_ADC3_Init(void)
+{
+
+  /* USER CODE BEGIN ADC3_Init 0 */
+
+  /* USER CODE END ADC3_Init 0 */
+
+  ADC_ChannelConfTypeDef sConfig = {0};
+  ADC_InjectionConfTypeDef sConfigInjected = {0};
+
+  /* USER CODE BEGIN ADC3_Init 1 */
+
+  /* USER CODE END ADC3_Init 1 */
+
+  /** Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion)
+  */
+  hadc3.Instance = ADC3;
+  hadc3.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV2;
+  hadc3.Init.Resolution = ADC_RESOLUTION_12B;
+  hadc3.Init.ScanConvMode = DISABLE;
+  hadc3.Init.ContinuousConvMode = DISABLE;
+  hadc3.Init.DiscontinuousConvMode = DISABLE;
+  hadc3.Init.DataAlign = ADC_DATAALIGN_RIGHT;
+  hadc3.Init.NbrOfConversion = 1;
+  hadc3.Init.DMAContinuousRequests = DISABLE;
+  hadc3.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
+  if (HAL_ADC_Init(&hadc3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
+  */
+  sConfig.Channel = ADC_CHANNEL_12;
+  sConfig.Rank = 1;
+  sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
+  if (HAL_ADC_ConfigChannel(&hadc3, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configures for the selected ADC injected channel its corresponding rank in the sequencer and its sample time
+  */
+  sConfigInjected.InjectedChannel = ADC_CHANNEL_12;
+  sConfigInjected.InjectedRank = 1;
+  sConfigInjected.InjectedNbrOfConversion = 1;
+  sConfigInjected.InjectedSamplingTime = ADC_SAMPLETIME_15CYCLES;
+  sConfigInjected.AutoInjectedConv = ENABLE;
+  sConfigInjected.InjectedDiscontinuousConvMode = DISABLE;
+  sConfigInjected.InjectedOffset = 0;
+  if (HAL_ADCEx_InjectedConfigChannel(&hadc3, &sConfigInjected) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN ADC3_Init 2 */
+
+  /* USER CODE END ADC3_Init 2 */
 
 }
 
@@ -417,11 +502,11 @@ static void MX_TIM1_Init(void)
   /* USER CODE END TIM1_Init 1 */
   htim1.Instance = TIM1;
   htim1.Init.Prescaler = 0;
-  htim1.Init.CounterMode = TIM_COUNTERMODE_CENTERALIGNED1;
+  htim1.Init.CounterMode = TIM_COUNTERMODE_CENTERALIGNED2;
   htim1.Init.Period = 5999;
   htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim1.Init.RepetitionCounter = 0;
-  htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
   if (HAL_TIM_PWM_Init(&htim1) != HAL_OK)
   {
     Error_Handler();
@@ -486,20 +571,41 @@ static void MX_GPIO_Init(void)
   /* USER CODE END MX_GPIO_Init_1 */
 
   /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOE_CLK_ENABLE();
   __HAL_RCC_GPIOH_CLK_ENABLE();
+  __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
-  __HAL_RCC_GPIOE_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(DEBUG_PIN_GPIO_Port, DEBUG_PIN_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6|GPIO_PIN_7|DEBUG_PIN_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pin : DEBUG_PIN_Pin */
-  GPIO_InitStruct.Pin = DEBUG_PIN_Pin;
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOC, SD_A_Pin|SD_B_Pin|SD_C_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin : K1_button_Pin */
+  GPIO_InitStruct.Pin = K1_button_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(K1_button_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PA6 PA7 DEBUG_PIN_Pin */
+  GPIO_InitStruct.Pin = GPIO_PIN_6|GPIO_PIN_7|DEBUG_PIN_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(DEBUG_PIN_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : SD_A_Pin SD_B_Pin SD_C_Pin */
+  GPIO_InitStruct.Pin = SD_A_Pin|SD_B_Pin|SD_C_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI3_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(EXTI3_IRQn);
 
   /* USER CODE BEGIN MX_GPIO_Init_2 */
 
@@ -507,15 +613,77 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+uint8_t comm_step = 0;
+volatile float speed = 800.0f;           // Delay in microseconds between steps (smaller = faster)
+volatile uint16_t pwm_duty = 4800;       // 0 ~ 5999
+volatile uint8_t buttonHeld = 0;
+char usb_tx[128];
+AS5600_t as5600_dev;
+
 void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
 {
 	if(hadc->Instance == ADC1)
 	{
 		//DEBUG_PIN_GPIO_Port->BSRR = DEBUG_PIN_Pin<<16;
 		//DEBUG_PIN_GPIO_Port->BSRR = DEBUG_PIN_Pin;
-
-
 	}
+}
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+	/* Check if the interrupt came from Pin 3 */
+	if(GPIO_Pin == GPIO_PIN_3)
+	{
+		// Active LOW button with pull-up
+		if(HAL_GPIO_ReadPin(K1_button_GPIO_Port, K1_button_Pin) == GPIO_PIN_RESET)
+		{
+			// Falling edge -> button pressed
+			buttonHeld = 1;
+		}
+		else
+		{
+			// Rising edge -> button released
+			buttonHeld = 0;
+		}
+	}
+}
+
+void motor_align()
+{
+	float angle = 0.0f;
+
+	// 1) proper space vector (balanced)
+	float Va = sinf(angle);
+	float Vb = sinf(angle - 2.094f);
+	float Vc = sinf(angle + 2.094f);
+
+	// 2) remove DC bias (IMPORTANT FIX)
+	float Vavg = (Va + Vb + Vc) / 3.0f;
+
+	Va -= Vavg;
+	Vb -= Vavg;
+	Vc -= Vavg;
+
+	// 3) scale with real voltage limit
+	float Uq = 0.2f;  // KEEP LOW for alignment
+
+	Va *= Uq;
+	Vb *= Uq;
+	Vc *= Uq;
+
+	// 4) convert to PWM centered around 50%
+	uint16_t dutyA = (uint16_t)((Va * 0.5f + 0.5f) * 5999);
+	uint16_t dutyB = (uint16_t)((Vb * 0.5f + 0.5f) * 5999);
+	uint16_t dutyC = (uint16_t)((Vc * 0.5f + 0.5f) * 5999);
+
+	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, dutyA);
+	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, dutyB);
+	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3, dutyC);
+
+	osDelay(300);
+	as5600_read_angle(&as5600_dev);
+	//add getter for m_offset = get_angle(&as5600_dev);
+	osDelay(100);
 }
 /* USER CODE END 4 */
 
@@ -531,19 +699,22 @@ void main_task1(void *argument)
   /* init code for USB_DEVICE */
   MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 5 */
-	HAL_GPIO_WritePin(DEBUG_PIN_GPIO_Port, DEBUG_PIN_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(DEBUG_PIN_GPIO_Port, DEBUG_PIN_Pin, GPIO_PIN_SET); //Debug pin read from oscilloscope
 
-	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4, 5998);
+	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4, 5998); //Setup CH4 pwm to near ARR so ADC injection is at middle
 
 	HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_1);
 	HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_2);
 	HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_3);
 	HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_4);
 
-	HAL_ADCEx_InjectedStart_IT(&hadc1);
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_SET);
 
-	char usb_tx[128];
-	AS5600_t as5600_dev;
+	HAL_GPIO_WritePin(SD_A_GPIO_Port, SD_A_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(SD_B_GPIO_Port, SD_B_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(SD_C_GPIO_Port, SD_C_Pin, GPIO_PIN_SET);
+
+	HAL_ADCEx_InjectedStart_IT(&hadc1);
 
 	if(as5600_init(&as5600_dev, &hi2c1, AS5600_ADDR) != AS_OK)
 		sprintf(usb_tx, "\nFailed to initialize AS5600 encoder...");
@@ -552,25 +723,50 @@ void main_task1(void *argument)
 	/* Infinite loop */
 	while(1)
 	{
-		__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 3180);
-		__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 5998);
-		__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3, 2498);
+		if(buttonHeld)
+		{
+			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_RESET);
+			motor_align();
+		}
+		else
+		{
+			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_SET);
+			__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 0);
+			__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 0);
+			__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3, 0);
 
-		as5600_read_angle(&as5600_dev);
+		}
 
-		uint16_t raw = ADC1->JDR1;
-
-		float voltage = (raw * 3.3f) / 4095.0f;   // if using 12-bit ADC + 3.3V (STM32 etc.)
-		// float voltage = (raw * 5.0f) / 1023.0f; // Arduino 10-bit + 5V
-
-		float current = (voltage - 2.5f) / 0.181f;
-
-		sprintf(usb_tx, "\nRaw: %d | Vout: %.3fV | Current: %.3f A", raw, voltage, current);
-		CDC_Transmit_FS((uint8_t*)usb_tx, strlen(usb_tx));
+//		uint16_t raw = ADC1->JDR1;
+//
+//		float voltage = (raw * 3.3f) / 4095.0f;   // if using 12-bit ADC + 3.3V (STM32 etc.)
+//		float current = (voltage - 2.5f) / 0.181f;
+//
+//		sprintf(usb_tx, "\nRaw: %d | Vout: %.3fV | Current: %.3f A", raw, voltage, current);
+//		CDC_Transmit_FS((uint8_t*)usb_tx, strlen(usb_tx));
 
 		osDelay(10);
 	}
   /* USER CODE END 5 */
+}
+
+/* USER CODE BEGIN Header_debug_main */
+/**
+ * @brief Function implementing the debugTask thread.
+ * @param argument: Not used
+ * @retval None
+ */
+/* USER CODE END Header_debug_main */
+void debug_main(void *argument)
+{
+  /* USER CODE BEGIN debug_main */
+	/* Infinite loop */
+	for(;;)
+	{
+		HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_6);
+		osDelay(500);
+	}
+  /* USER CODE END debug_main */
 }
 
 /**

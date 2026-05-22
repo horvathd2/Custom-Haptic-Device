@@ -59,8 +59,17 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define K1_button_Pin GPIO_PIN_3
+#define K1_button_GPIO_Port GPIOE
+#define K1_button_EXTI_IRQn EXTI3_IRQn
 #define DEBUG_PIN_Pin GPIO_PIN_9
 #define DEBUG_PIN_GPIO_Port GPIOA
+#define SD_A_Pin GPIO_PIN_10
+#define SD_A_GPIO_Port GPIOC
+#define SD_B_Pin GPIO_PIN_11
+#define SD_B_GPIO_Port GPIOC
+#define SD_C_Pin GPIO_PIN_12
+#define SD_C_GPIO_Port GPIOC
 
 /* USER CODE BEGIN Private defines */
 

@@ -23,18 +23,19 @@
 #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
 #endif
 
-#define GPIOAEN		(1U << 0)
-#define GPIOBEN		(1U << 1)
-#define GPIOCEN		(1U << 2)
-#define GPIODEN		(1U << 3)
-#define GPIOEEN		(1U << 4)
-#define GPIOFEN		(1U << 5)
-#define GPIOGEN		(1U << 6)
-#define GPIOHEN		(1U << 7)
-#define GPIOIEN		(1U << 8)
+#define GPIOAEN			(1U << 0)
+#define GPIOBEN			(1U << 1)
+#define GPIOCEN			(1U << 2)
+#define GPIODEN			(1U << 3)
+#define GPIOEEN			(1U << 4)
+#define GPIOFEN			(1U << 5)
+#define GPIOGEN			(1U << 6)
+#define GPIOHEN			(1U << 7)
+#define GPIOIEN			(1U << 8)
 
-#define TIM1EN		(1U << 0)
-#define ADC1EN		(1U << 8)
+#define TIM1EN			(1U << 0)
+#define TIM1_CR1_CEN	(1U << 0)
+#define ADC1EN			(1U << 8)
 
 int main(void)
 {
@@ -56,6 +57,14 @@ int main(void)
 			(0U << RCC_PLLCFGR_PLLP_Pos) |   // P = 2 (encoded as 0)
 			RCC_PLLCFGR_PLLSRC_HSE;
 
+	//Apply APB/AHB prescalers
+	// AHB1 = no division - 60MHz
+	RCC->CFGR |= RCC_CFGR_HPRE_DIV1;
+	// APB1 = divide by 4 - 20MHz
+	RCC->CFGR |= RCC_CFGR_PPRE1_DIV4;
+	// APB2 = divide by 2 - 30MHz
+	RCC->CFGR |= RCC_CFGR_PPRE2_DIV2;
+
 	// Enable PLL
 	RCC->CR |= RCC_CR_PLLON;
 	while (!(RCC->CR & RCC_CR_PLLRDY));
@@ -64,10 +73,6 @@ int main(void)
 	// Switch to PLL
 	RCC->CFGR |= RCC_CFGR_SW_PLL;
 	while ((RCC->CFGR & RCC_CFGR_SWS) != RCC_CFGR_SWS_PLL);
-
-	// Switch to HSE - NOT REQUIRED HERE
-	//RCC->CFGR |= RCC_CFGR_SW_HSE;
-	//while ((RCC->CFGR & RCC_CFGR_SWS) != RCC_CFGR_SWS_HSE);
 
 	// Turn off HSI
 	RCC->CR &= ~RCC_CR_HSION;
@@ -101,6 +106,15 @@ int main(void)
 	 *  E13 ch3
 	 *  E14 ch4
 	 */
+
+	TIM1->PSC = 0;
+	TIM1->ARR = 3599;
+	TIM1->CNT = 0;
+
+
+
+	//TIM1 COUNTER ENABLE
+	TIM1->CR1 = TIM1_CR1_CEN;
 
 	while(1){
 
