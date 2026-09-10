@@ -85,6 +85,7 @@ int main(void)
 	GPIOB->MODER |= (GPIO_MODER_MODER8) | (GPIO_MODER_MODER9);
 	//ENABLE ADC1 PERIPHERAL CLOCK
 	RCC->APB2ENR |= ADC1EN;
+
 	/*
 	 * B0 ADC1 IN8
 	 * B1 ADC2 IN9
@@ -111,10 +112,10 @@ int main(void)
 	TIM1->ARR = 3599;
 	TIM1->CNT = 0;
 
-
-
 	//TIM1 COUNTER ENABLE
 	TIM1->CR1 = TIM1_CR1_CEN;
+
+	uint8_t mpu_present = (MPU->TYPE >> 8);
 
 	while(1){
 

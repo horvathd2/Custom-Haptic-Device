@@ -10,6 +10,8 @@
 
 #include "main.h"
 
+/* MACROS */
+
 #define AS5600_ADDR				0x36
 
 #define AS5600_ZMCO_REG			0x00
@@ -18,8 +20,8 @@
 #define AS5600_MANG_REG			0x05
 #define AS5600_CONF_REG			0x07
 
-#define AS5600_RAW_ANGLE_REG 	0x0C 	//To 0x0D
-#define AS5600_ANGLE_REG		0x0E	//To 0x0F
+#define AS5600_RAW_ANGLE_REG 	0x0C
+#define AS5600_ANGLE_REG		0x0E
 
 #define ANGLE_READ_SIZE			0x2
 
@@ -32,6 +34,8 @@
 #define AS5600_BURN_SETTING		0x40
 
 #define AS5600_RESOLUTION		4096.0f
+
+/* TYPEDEFS AND STRUCTS */
 
 typedef enum{
 	AS_OK = 0x00,
@@ -52,6 +56,8 @@ struct AS5600_t{
 	uint8_t i2c_addr;
 	volatile uint8_t dma_rx_done;
 };
+
+/* FUNCTION PROTOTYPES */
 
 as_err_t as5600_init(AS5600_t *self, I2C_HandleTypeDef *as5600_i2c, uint8_t i2c_addr);
 as_err_t as5600_read_angle(AS5600_t *self);

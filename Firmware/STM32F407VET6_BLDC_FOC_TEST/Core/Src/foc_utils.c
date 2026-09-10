@@ -5,7 +5,7 @@
  *      Author: H.Dani
  */
 
-#include "foc.h"
+#include "foc_utils.h"
 #include "as5600.h"
 #include "main.h"
 #include "math.h"
@@ -33,6 +33,8 @@
  *
  */
 
+/* LOCAL STATIC FUNCTIONS */
+
 static void clarke_transform(float ia, float ib, float *alpha, float *beta)
 {
     *alpha = ia;
@@ -58,50 +60,96 @@ static void inverse_park_transform(float vd, float vq, float sin_theta, float co
 	*beta = vd * sin_theta + vq * cos_theta;
 }
 
-static void compute_pid(PID *pid)
+static uint8_t compute_sv_sector(float *alpha, float *beta)
 {
-	pid->us_time = HAL_GetTick();
-	pid->d_time = (pid->us_time - pid->prev_time);
-
-	if (pid->d_time < 1) pid->d_time = 1;
-
-	pid->p_err	= pid->setpoint - pid->current_pos;
-	pid->d_err	= (pid->p_err - pid->prev_error)/pid->d_time;
-	pid->i_err	= pid->i_err + (pid->p_err * pid->d_time);
-
-	pid->ctrl_signal = (pid->kp * pid->p_err) +
-					   (pid->kd * pid->d_err) +
-					   (pid->ki * pid->i_err);
-
-	pid->prev_error	= pid->p_err;
-	pid->prev_time	= pid->us_time;
+	if(*beta >=	0 && *beta < *alpha * SQRT3)
+	{
+		return SVPWM_SECTOR_V1;
+	}
+	else if(*beta >= *alpha * SQRT3 && *beta >= *alpha * -SQRT3)
+	{
+		return SVPWM_SECTOR_V2;
+	}
+	else if(*beta < *alpha * -SQRT3 && *beta > 0)
+	{
+		return SVPWM_SECTOR_V3;
+	}
+	else if(*beta <= 0 && *beta > *alpha * SQRT3)
+	{
+		return SVPWM_SECTOR_V4;
+	}
+	else if(*beta <= *alpha * SQRT3 && *beta <= *alpha * -SQRT3)
+	{
+		return SVPWM_SECTOR_V5;
+	}
+	else if(*beta > *alpha * -SQRT3 && *beta < 0)
+	{
+		return SVPWM_SECTOR_V6;
+	}
+	else
+	{
+		/* MISRA compliance */
+	}
 }
 
-bldc_err_t bldc_move(BLDC_t *self, int32_t setpoint)
+
+/* GLOBAL FUNCTIONS */
+
+void compute_svpwm(float *alpha, float *beta)
 {
-	self->pid_pos.current_pos = self->theta_m;
-	self->pid_pos.setpoint = setpoint;
+	uint16_t t1 = 0;
+	uint16_t t2 = 0;
+	uint16_t t0 = 0;
 
-	compute_pid(&self->pid_pos);
+	uint8_t sector = compute_sv_sector(alpha, beta);
 
-	//Set PWM for phases
+	switch(sector)
+	{
+		case SVPWM_SECTOR_V1:
+
+			break;
+		case SVPWM_SECTOR_V2:
+
+			break;
+		case SVPWM_SECTOR_V3:
+
+			break;
+		case SVPWM_SECTOR_V4:
+
+			break;
+		case SVPWM_SECTOR_V5:
+
+			break;
+		case SVPWM_SECTOR_V6:
+
+			break;
+		default:
+
+			break;
+	}
+}
+
+void bldc_move(BLDC_t *self, int32_t setpoint)
+{
+	self->pi_pos.current_pos = self->theta_m;
+	self->pi_pos.setpoint = setpoint;
+
+	compute_pi(&self->pi_pos);
+
+	/* Set PWM for phases */
 	self->htim_pwm->Instance->CCR1 = self->pwm1;
 	self->htim_pwm->Instance->CCR2 = self->pwm2;
 	self->htim_pwm->Instance->CCR3 = self->pwm3;
 
-	return BLDC_OK;
 }
 
-bldc_err_t bldc_move_foc(BLDC_t *self, int32_t setpoint)
+void bldc_move_foc(BLDC_t *self, int32_t setpoint)
 {
-	// Convert raw encoder value to mechanical angle in degrees
+	/* Convert raw encoder value to mechanical angle in degrees */
 	self->theta_m = self->as5600_enc.raw_angle * ENC_TO_DEG;
-	// Convert mechanical angle to electrical angle
+	/* Convert mechanical angle to electrical angle */
 	self->theta_e = self->theta_m * POLE_PAIRS_5010;
 
-
-
-	return BLDC_OK;
 }
 
 bldc_err_t init_motor_foc(BLDC_t *self,
