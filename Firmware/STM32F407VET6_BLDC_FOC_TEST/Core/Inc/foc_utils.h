@@ -19,6 +19,7 @@
 
 #define PI					3.141592653f
 #define TWO_PI				6.283185306f
+#define PI_DIV_THREE		1.047197551f
 #define INV_SQRT3 			0.577350269f
 #define TWO_BY_SQRT3 		1.154700538f
 #define ONE_BY_SQRT3 		0.577350269f
@@ -44,9 +45,7 @@ typedef enum{
 
 typedef uint8_t bldc_err_t;
 
-typedef struct BLDC_t BLDC_t;
-
-struct BLDC_t{
+typedef struct{
 	PI_t pi_pos;
 	AS5600_t as5600_enc;
 	ADC_HandleTypeDef *ADC_current_sensor;
@@ -55,10 +54,11 @@ struct BLDC_t{
 	float ialpha, ibeta;	/* TODO: SWITCH FROM FLOAT TO INT? */
 	float m_q, m_d;
 	float theta_m, theta_e;
-	uint16_t pwm1;
-	uint16_t pwm2;
-	uint16_t pwm3;
-};
+	uint16_t pwm_period;
+	uint16_t duty_pwm1;
+	uint16_t duty_pwm2;
+	uint16_t duty_pwm3;
+}BLDC_t;
 
 /* FUNCTION PROTOTYPES */
 

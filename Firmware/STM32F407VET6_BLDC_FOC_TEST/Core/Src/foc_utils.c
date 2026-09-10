@@ -95,35 +95,67 @@ static uint8_t compute_sv_sector(float *alpha, float *beta)
 
 /* GLOBAL FUNCTIONS */
 
-void compute_svpwm(float *alpha, float *beta)
+void compute_svpwm(BLDC_t *bldc_self)
 {
 	uint16_t t1 = 0;
 	uint16_t t2 = 0;
 	uint16_t t0 = 0;
 
-	uint8_t sector = compute_sv_sector(alpha, beta);
+	uint8_t sector = compute_sv_sector(bldc_self->ialpha, bldc_self->ibeta);
+
+	float theta_s = bldc_self->theta_e - (sector - 1) * PI_DIV_THREE;
+
+	t1 = bldc_self->pwm_period
 
 	switch(sector)
 	{
 		case SVPWM_SECTOR_V1:
 
+			bldc_self->duty_pwm1 = (t1 + t2 + t0/2)/bldc_self->pwm_period;
+			bldc_self->duty_pwm2 = (t2 + t0/2)/bldc_self->pwm_period;
+			bldc_self->duty_pwm3 = (t0/2)/bldc_self->pwm_period;
+
 			break;
 		case SVPWM_SECTOR_V2:
+
+			bldc_self->duty_pwm1 = (t1 + t0/2)/bldc_self->pwm_period;
+			bldc_self->duty_pwm2 = (t1 + t2 + t0/2)/bldc_self->pwm_period;
+			bldc_self->duty_pwm3 = (t0/2)/bldc_self->pwm_period;
 
 			break;
 		case SVPWM_SECTOR_V3:
 
+			bldc_self->duty_pwm1 = (t0/2)/bldc_self->pwm_period;
+			bldc_self->duty_pwm2 = (t1 + t2 + t0/2)/bldc_self->pwm_period;
+			bldc_self->duty_pwm3 = (t2 + t0/2)/bldc_self->pwm_period;
+
 			break;
 		case SVPWM_SECTOR_V4:
+
+			bldc_self->duty_pwm1 = (t0/2)/bldc_self->pwm_period;
+			bldc_self->duty_pwm2 = (t1 + t0/2)/bldc_self->pwm_period;
+			bldc_self->duty_pwm3 = (t1 + t2 + t0/2)/bldc_self->pwm_period;
 
 			break;
 		case SVPWM_SECTOR_V5:
 
+			bldc_self->duty_pwm1 = (t2 + t0/2)/bldc_self->pwm_period;
+			bldc_self->duty_pwm2 = (t0/2)/bldc_self->pwm_period;
+			bldc_self->duty_pwm3 = (t1 + t2 + t0/2)/bldc_self->pwm_period;
+
 			break;
 		case SVPWM_SECTOR_V6:
 
+			bldc_self->duty_pwm1 = (t1 + t2 + t0/2)/bldc_self->pwm_period;
+			bldc_self->duty_pwm2 = (t0/2)/bldc_self->pwm_period;
+			bldc_self->duty_pwm3 = (t1 + t0/2)/bldc_self->pwm_period;
+
 			break;
 		default:
+
+			bldc_self->duty_pwm1 = 0;
+			bldc_self->duty_pwm2 = 0;
+			bldc_self->duty_pwm3 = 0;
 
 			break;
 	}
@@ -165,9 +197,12 @@ bldc_err_t init_motor_foc(BLDC_t *self,
 
 	self->htim_pwm = htim_pwm;
 	self->as5600_enc = as5600_enc;
-	self->pid_pos.kp = kp;
-	self->pid_pos.ki = ki;
-	self->pid_pos.kd = kd;
+	self->pi_pos.kp = kp;
+	self->pi_pos.ki = ki;
+	self->pi_pos.kd = kd;
+
+	uint32_t pwm_freq = 20000;
+	self->pwm_period = (1/(float)pwm_freq)*100000;
 
 	return BLDC_OK;
 }
