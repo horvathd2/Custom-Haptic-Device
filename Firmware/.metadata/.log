@@ -2396,3 +2396,153 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-09-10 12:45:13.438
 !MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2026-09-10 14:58:36.235 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.egit.core 1 0 2026-09-10 14:58:41.481
+!MESSAGE Using Apache MINA sshd as ssh client.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2026-09-10 14:58:43.152
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-09-10 14:58:43.152
+!MESSAGE Log4j2 initialized with config file D:\Embedded Projects\Custom Haptic Device\Firmware\.metadata\.log4j2.xml
+
+!ENTRY org.eclipse.egit.ui 2 0 2026-09-10 14:58:49.377
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\H.Dani'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-09-10 14:58:53.800
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2026-09-17 19:45:07.956 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.egit.core 1 0 2026-09-17 19:45:14.497
+!MESSAGE Using Apache MINA sshd as ssh client.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2026-09-17 19:45:16.449
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-09-17 19:45:16.450
+!MESSAGE Log4j2 initialized with config file D:\Embedded Projects\Custom Haptic Device\Firmware\.metadata\.log4j2.xml
+
+!ENTRY org.eclipse.egit.ui 2 0 2026-09-17 19:45:24.026
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\H.Dani'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-09-17 19:45:28.932
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2026-09-19 11:51:18.399 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.egit.core 1 0 2026-09-19 11:51:23.705
+!MESSAGE Using Apache MINA sshd as ssh client.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2026-09-19 11:51:25.546
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-09-19 11:51:25.547
+!MESSAGE Log4j2 initialized with config file D:\Embedded Projects\Custom Haptic Device\Firmware\.metadata\.log4j2.xml
+
+!ENTRY org.eclipse.egit.ui 2 0 2026-09-19 11:51:32.339
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\H.Dani'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-09-19 11:51:36.981
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2026-09-19 18:17:31.394 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.egit.core 1 0 2026-09-19 18:17:37.551
+!MESSAGE Using Apache MINA sshd as ssh client.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2026-09-19 18:17:39.267
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-09-19 18:17:39.267
+!MESSAGE Log4j2 initialized with config file D:\Embedded Projects\Custom Haptic Device\Firmware\.metadata\.log4j2.xml
+
+!ENTRY org.eclipse.egit.ui 2 0 2026-09-19 18:17:45.597
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\H.Dani'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-09-19 18:17:50.411
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2026-09-21 16:10:22.213 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.egit.core 1 0 2026-09-21 16:10:28.567
+!MESSAGE Using Apache MINA sshd as ssh client.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2026-09-21 16:10:30.624
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-09-21 16:10:30.625
+!MESSAGE Log4j2 initialized with config file D:\Embedded Projects\Custom Haptic Device\Firmware\.metadata\.log4j2.xml
+
+!ENTRY org.eclipse.egit.ui 2 0 2026-09-21 16:10:37.730
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\H.Dani'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-09-21 16:10:42.244
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2026-09-22 10:48:01.809 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.egit.core 1 0 2026-09-22 19:28:03.791
+!MESSAGE Using Apache MINA sshd as ssh client.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2026-09-22 19:28:05.583
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-09-22 19:28:05.584
+!MESSAGE Log4j2 initialized with config file D:\Embedded Projects\Custom Haptic Device\Firmware\.metadata\.log4j2.xml
+
+!ENTRY org.eclipse.egit.ui 2 0 2026-09-22 19:28:11.958
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\H.Dani'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-09-22 19:28:25.401
+!MESSAGE Started RMI Server, listening on port 41337

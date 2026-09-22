@@ -8,7 +8,11 @@
 #ifndef INC_PI_UTILS_H_
 #define INC_PI_UTILS_H_
 
+#include "stdint.h"
+
 /* MACROS */
+
+
 
 /* TYPEDEFS AND STRUCTS */
 

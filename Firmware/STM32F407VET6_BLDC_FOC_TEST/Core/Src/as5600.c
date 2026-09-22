@@ -8,9 +8,11 @@
 #include "as5600.h"
 #include "main.h"
 #include "string.h"
+#include "stdint.h"
 
 /* LOCAL STATIC FUNCTIONS */
 
+/* TODO: REDO ALL READ/WRITE FUNCTION POINTERS!!!! */
 static as_err_t as5600_read(AS5600_t *self, uint8_t reg, uint8_t *data, uint16_t len)
 {
 	if(HAL_I2C_Mem_Read(self->as5600_i2c, (uint16_t)(self->i2c_addr << 1), reg,

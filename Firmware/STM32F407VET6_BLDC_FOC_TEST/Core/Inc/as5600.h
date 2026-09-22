@@ -9,6 +9,7 @@
 #define INC_AS5600_H_
 
 #include "main.h"
+#include "stdint.h"
 
 /* MACROS */
 

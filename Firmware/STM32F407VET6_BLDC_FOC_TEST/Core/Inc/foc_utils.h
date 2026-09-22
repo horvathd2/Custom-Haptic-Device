@@ -9,13 +9,13 @@
 #define INC_FOC_UTILS_H_
 
 #include "main.h"
+#include "stdint.h"
 #include "as5600.h"
 #include "pi_utils.h"
 
 /* MACROS */
 
 #define ENCODER_RESOLUTION	AS5600_RESOLUTION
-#define POLE_PAIRS_5010		7
 
 #define PI					3.141592653f
 #define TWO_PI				6.283185306f
@@ -58,6 +58,7 @@ typedef struct{
 	uint16_t duty_pwm1;
 	uint16_t duty_pwm2;
 	uint16_t duty_pwm3;
+	uint8_t pole_pairs;
 }BLDC_t;
 
 /* FUNCTION PROTOTYPES */

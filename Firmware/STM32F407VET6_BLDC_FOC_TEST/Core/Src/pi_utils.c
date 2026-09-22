@@ -7,6 +7,10 @@
 
 #include "pi_utils.h"
 
+/* MACROS */
+
+
+
 /* LOCAL STATIC FUNCTIONS */
 
 static void compute_pi(PI_t *pi_self)

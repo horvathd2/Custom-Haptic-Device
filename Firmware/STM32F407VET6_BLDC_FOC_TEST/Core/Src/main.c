@@ -25,6 +25,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "as5600.h"
+#include "foc_utils.h"
 #include "usbd_cdc_if.h"
 #include "string.h"
 #include "math.h"
@@ -38,7 +39,7 @@ typedef StaticTask_t osStaticThreadDef_t;
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define POLE_PAIRS_5010		(7)
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -658,42 +659,28 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 	}
 }
 
-void motor_align()
+void motor_align(void)
 {
-	float angle = 0.0f;
-
-	// 1) proper space vector (balanced)
-	float Va = sinf(angle);
-	float Vb = sinf(angle - 2.094f);
-	float Vc = sinf(angle + 2.094f);
-
-	// 2) remove DC bias (IMPORTANT FIX)
-	float Vavg = (Va + Vb + Vc) / 3.0f;
-
-	Va -= Vavg;
-	Vb -= Vavg;
-	Vc -= Vavg;
-
-	// 3) scale with real voltage limit
-	float Uq = 0.2f;  // KEEP LOW for alignment
-
-	Va *= Uq;
-	Vb *= Uq;
-	Vc *= Uq;
-
-	// 4) convert to PWM centered around 50%
-	uint16_t dutyA = (uint16_t)((Va * 0.5f + 0.5f) * 5999);
-	uint16_t dutyB = (uint16_t)((Vb * 0.5f + 0.5f) * 5999);
-	uint16_t dutyC = (uint16_t)((Vc * 0.5f + 0.5f) * 5999);
+	uint16_t dutyA = 5999;
+	uint16_t dutyB = 0;
+	uint16_t dutyC = 0;
 
 	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, dutyA);
 	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, dutyB);
 	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3, dutyC);
 
-	osDelay(300);
+	osDelay(500);
 	as5600_read_angle(&as5600_dev);
-	//add getter for m_offset = get_angle(&as5600_dev);
-	osDelay(100);
+
+	dutyA = 0;
+	dutyB = 0;
+	dutyC = 0;
+
+	osDelay(500);
+
+	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, dutyA);
+	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, dutyB);
+	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3, dutyC);
 }
 
 void current_calibrate(void)
@@ -759,9 +746,13 @@ void main_task1(void *argument)
 	//current_calibrate();  // IMPORTANT
 
 	if(as5600_init(&as5600_dev, &hi2c1, AS5600_ADDR) != AS_OK)
+	{
 		sprintf(usb_tx, "\nFailed to initialize AS5600 encoder...");
+	}
 
 	CDC_Transmit_FS((uint8_t*)usb_tx, strlen(usb_tx));
+
+	motor_align();
 	/* Infinite loop */
 	while(1)
 	{
@@ -785,6 +776,7 @@ void main_task1(void *argument)
 		//		float current = (voltage - 2.5f) / 0.181f;
 
 		//current=(vadc-vref)/gain*rshunt;
+		/*
 		__disable_irq();
 		raw_adc_curr_local = raw_adc_curr;
 		__enable_irq();
@@ -801,13 +793,26 @@ void main_task1(void *argument)
 
 		current_filtered = alpha * current_raw + (1.0f - alpha) * current_filtered;
 
-		NVIC_SystemReset();
+		//NVIC_SystemReset();
 		//current_filtered=0;
 		sprintf(usb_tx, "\nRaw:%4d | V:%.3f | I:%.3f (raw:%.3f)",
 				raw_adc_curr_local, adc_voltage, current_filtered, current_raw);
 		CDC_Transmit_FS((uint8_t*)usb_tx, strlen(usb_tx));
+		*/
 
-		osDelay(20);
+		uint16_t mec_angle = (uint16_t)(as5600_dev.raw_angle * ENC_TO_DEG);
+		uint16_t elec_angle = mec_angle * 7;
+
+		sprintf(usb_tx, "\nElectrical angle: %d \nMechanical angle: %d", elec_angle, mec_angle);
+
+//		sprintf(usb_tx, "\nRaw angle: %d",
+//				as5600_dev.raw_angle);
+
+		CDC_Transmit_FS((uint8_t*)usb_tx, strlen(usb_tx));
+
+		HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_7);
+
+		osDelay(500);
 	}
 	/* USER CODE END 5 */
 }

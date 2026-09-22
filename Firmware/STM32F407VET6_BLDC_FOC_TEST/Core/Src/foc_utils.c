@@ -11,6 +11,7 @@
 #include "math.h"
 #include "string.h"
 #include "stdlib.h"
+#include "stdint.h"
 
 /*
  *
@@ -60,40 +61,105 @@ static void inverse_park_transform(float vd, float vq, float sin_theta, float co
 	*beta = vd * sin_theta + vq * cos_theta;
 }
 
-static uint8_t compute_sv_sector(float *alpha, float *beta)
+static void align_rotor(BLDC_t *bldc_self)
 {
-	if(*beta >=	0 && *beta < *alpha * SQRT3)
+	uint8_t u8DelayMs = 500;
+	uint8_t u8Index = 0;
+
+	/* Set one phase of the motor to VDC, the rest to GND */
+	bldc_self->duty_pwm1 = bldc_self->pwm_period;
+	bldc_self->duty_pwm2 = 0;
+	bldc_self->duty_pwm3 = 0;
+
+	/* Set duty cycles for the PWM timers */
+	bldc_self->htim_pwm->Instance->CCR1 = bldc_self->duty_pwm1;
+	bldc_self->htim_pwm->Instance->CCR2 = bldc_self->duty_pwm2;
+	bldc_self->htim_pwm->Instance->CCR3 = bldc_self->duty_pwm3;
+
+	/* Delay for 500ms to determine electrical angle */
+	for(u8Index; u8Index <= u8DelayMs; u8Index++)
 	{
-		return SVPWM_SECTOR_V1;
+
 	}
-	else if(*beta >= *alpha * SQRT3 && *beta >= *alpha * -SQRT3)
+}
+
+static uint8_t compute_sv_sector(float alpha, float beta)
+{
+	uint8_t u8Sector = SVPWM_SECTOR_V1;
+
+	if(beta >=	0 && beta < alpha * SQRT3)
 	{
-		return SVPWM_SECTOR_V2;
+		u8Sector = SVPWM_SECTOR_V1;
 	}
-	else if(*beta < *alpha * -SQRT3 && *beta > 0)
+	else if(beta >= alpha * SQRT3 && beta >= alpha * -SQRT3)
 	{
-		return SVPWM_SECTOR_V3;
+		u8Sector = SVPWM_SECTOR_V2;
 	}
-	else if(*beta <= 0 && *beta > *alpha * SQRT3)
+	else if(beta < alpha * -SQRT3 && beta > 0)
 	{
-		return SVPWM_SECTOR_V4;
+		u8Sector = SVPWM_SECTOR_V3;
 	}
-	else if(*beta <= *alpha * SQRT3 && *beta <= *alpha * -SQRT3)
+	else if(beta <= 0 && beta > alpha * SQRT3)
 	{
-		return SVPWM_SECTOR_V5;
+		u8Sector = SVPWM_SECTOR_V4;
 	}
-	else if(*beta > *alpha * -SQRT3 && *beta < 0)
+	else if(beta <= alpha * SQRT3 && beta <= alpha * -SQRT3)
 	{
-		return SVPWM_SECTOR_V6;
+		u8Sector = SVPWM_SECTOR_V5;
+	}
+	else if(beta > alpha * -SQRT3 && beta < 0)
+	{
+		u8Sector = SVPWM_SECTOR_V6;
 	}
 	else
 	{
 		/* MISRA compliance */
 	}
+
+	return u8Sector;
 }
 
 
 /* GLOBAL FUNCTIONS */
+
+uint16_t get_mechanical_angle(BLDC_t *bldc_self)
+{
+	/* Convert raw encoder value to mechanical angle in degrees */
+	return bldc_self->as5600_enc.raw_angle * ENC_TO_DEG;
+}
+
+uint16_t get_electrical_angle(BLDC_t *bldc_self)
+{
+	/* Convert mechanical angle to electrical angle */
+	return get_mechanical_angle(bldc_self)* bldc_self->pole_pairs;
+}
+
+void set_phase_duty_cycle(BLDC_t *bldc_self)
+{
+	bldc_self->htim_pwm->Instance->CCR1 = bldc_self->duty_pwm1;
+	bldc_self->htim_pwm->Instance->CCR2 = bldc_self->duty_pwm1;
+	bldc_self->htim_pwm->Instance->CCR3 = bldc_self->duty_pwm1;
+}
+
+//bldc_err_t motor_align(BLDC_t *bldc_self)
+//{
+//	bldc_self->duty_pwm1 = 5999;
+//	bldc_self->duty_pwm2 = 0;
+//	bldc_self->duty_pwm3 = 0;
+//
+//	set_phase_duty_cycle(bldc_self);
+//
+//	osDelay(500);
+//	as5600_read_angle(&bldc_self->as5600_enc);
+//
+//	bldc_self->duty_pwm1 = 0;
+//	bldc_self->duty_pwm2 = 0;
+//	bldc_self->duty_pwm3 = 0;
+//
+//	osDelay(500);
+//
+//	set_phase_duty_cycle(bldc_self);
+//}
 
 void compute_svpwm(BLDC_t *bldc_self)
 {
@@ -105,7 +171,11 @@ void compute_svpwm(BLDC_t *bldc_self)
 
 	float theta_s = bldc_self->theta_e - (sector - 1) * PI_DIV_THREE;
 
-	t1 = bldc_self->pwm_period
+	uint8_t m = 1;
+
+	t1 = bldc_self->pwm_period * m * (sinf(60-bldc_self->theta_e))/sinf(60);
+	t2 = bldc_self->pwm_period * m * (sinf(bldc_self->theta_e))/sinf(60);
+	t0 = bldc_self->pwm_period - t1 - t2;
 
 	switch(sector)
 	{
@@ -151,43 +221,32 @@ void compute_svpwm(BLDC_t *bldc_self)
 			bldc_self->duty_pwm3 = (t1 + t0/2)/bldc_self->pwm_period;
 
 			break;
-		default:
-
-			bldc_self->duty_pwm1 = 0;
-			bldc_self->duty_pwm2 = 0;
-			bldc_self->duty_pwm3 = 0;
-
-			break;
 	}
+
+	/* Clamp duty cycle outputs */
+	bldc_self->duty_pwm1 = (bldc_self->duty_pwm1 > bldc_self->pwm_period) ? bldc_self->pwm_period : bldc_self->duty_pwm1;
+	bldc_self->duty_pwm2 = (bldc_self->duty_pwm2 > bldc_self->pwm_period) ? bldc_self->pwm_period : bldc_self->duty_pwm2;
+	bldc_self->duty_pwm3 = (bldc_self->duty_pwm3 > bldc_self->pwm_period) ? bldc_self->pwm_period : bldc_self->duty_pwm3;
 }
 
-void bldc_move(BLDC_t *self, int32_t setpoint)
+void bldc_move(BLDC_t *bldc_self, int32_t setpoint)
 {
-	self->pi_pos.current_pos = self->theta_m;
-	self->pi_pos.setpoint = setpoint;
+	bldc_self->pi_pos.current_pos = bldc_self->theta_m;
+	bldc_self->pi_pos.setpoint = setpoint;
 
-	compute_pi(&self->pi_pos);
+	compute_pi(&bldc_self->pi_pos);
 
 	/* Set PWM for phases */
-	self->htim_pwm->Instance->CCR1 = self->pwm1;
-	self->htim_pwm->Instance->CCR2 = self->pwm2;
-	self->htim_pwm->Instance->CCR3 = self->pwm3;
-
-}
-
-void bldc_move_foc(BLDC_t *self, int32_t setpoint)
-{
-	/* Convert raw encoder value to mechanical angle in degrees */
-	self->theta_m = self->as5600_enc.raw_angle * ENC_TO_DEG;
-	/* Convert mechanical angle to electrical angle */
-	self->theta_e = self->theta_m * POLE_PAIRS_5010;
-
+	bldc_self->htim_pwm->Instance->CCR1 = bldc_self->duty_pwm1;
+	bldc_self->htim_pwm->Instance->CCR2 = bldc_self->duty_pwm1;
+	bldc_self->htim_pwm->Instance->CCR3 = bldc_self->duty_pwm1;
 }
 
 bldc_err_t init_motor_foc(BLDC_t *self,
 						  TIM_HandleTypeDef *htim_pwm,
 						  AS5600_t as5600_enc,
 						  ADC_HandleTypeDef *ADC_current_sensor,
+						  uint8_t pole_pairs,
 						  float kp, float ki, float kd)
 {
 	if(self == NULL)
@@ -200,8 +259,9 @@ bldc_err_t init_motor_foc(BLDC_t *self,
 	self->pi_pos.kp = kp;
 	self->pi_pos.ki = ki;
 	self->pi_pos.kd = kd;
+	self->pole_pairs = pole_pairs;
 
-	uint32_t pwm_freq = 20000;
+	uint32_t pwm_freq = 20000;	/* TODO: change method of getting PWM frequency */
 	self->pwm_period = (1/(float)pwm_freq)*100000;
 
 	return BLDC_OK;
