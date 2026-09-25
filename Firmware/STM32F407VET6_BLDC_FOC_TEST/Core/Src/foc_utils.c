@@ -119,7 +119,6 @@ static uint8_t compute_sv_sector(float alpha, float beta)
 	return u8Sector;
 }
 
-
 /* GLOBAL FUNCTIONS */
 
 uint16_t get_mechanical_angle(BLDC_t *bldc_self)
@@ -137,29 +136,38 @@ uint16_t get_electrical_angle(BLDC_t *bldc_self)
 void set_phase_duty_cycle(BLDC_t *bldc_self)
 {
 	bldc_self->htim_pwm->Instance->CCR1 = bldc_self->duty_pwm1;
-	bldc_self->htim_pwm->Instance->CCR2 = bldc_self->duty_pwm1;
-	bldc_self->htim_pwm->Instance->CCR3 = bldc_self->duty_pwm1;
+	bldc_self->htim_pwm->Instance->CCR2 = bldc_self->duty_pwm2;
+	bldc_self->htim_pwm->Instance->CCR3 = bldc_self->duty_pwm3;
 }
 
-//bldc_err_t motor_align(BLDC_t *bldc_self)
-//{
-//	bldc_self->duty_pwm1 = 5999;
-//	bldc_self->duty_pwm2 = 0;
-//	bldc_self->duty_pwm3 = 0;
-//
-//	set_phase_duty_cycle(bldc_self);
-//
-//	osDelay(500);
-//	as5600_read_angle(&bldc_self->as5600_enc);
-//
-//	bldc_self->duty_pwm1 = 0;
-//	bldc_self->duty_pwm2 = 0;
-//	bldc_self->duty_pwm3 = 0;
-//
-//	osDelay(500);
-//
-//	set_phase_duty_cycle(bldc_self);
-//}
+bldc_err_t motor_align(BLDC_t *bldc_self)
+{
+	bldc_self->duty_pwm1 = 5999;
+	bldc_self->duty_pwm2 = 0;
+	bldc_self->duty_pwm3 = 0;
+
+	set_phase_duty_cycle(bldc_self);
+
+	bldc_self->delay(500);
+
+	if(as5600_read_angle(&bldc_self->as5600_enc) != AS_OK)
+	{
+		return BLDC_FAIL;
+	}
+
+	/* Store the mechanical angle offset for deriving the electrical angle */
+	bldc_self->theta_m_offset = bldc_self->as5600_enc->raw_angle;
+
+	bldc_self->duty_pwm1 = 0;
+	bldc_self->duty_pwm2 = 0;
+	bldc_self->duty_pwm3 = 0;
+
+	bldc_self->delay(500);
+
+	set_phase_duty_cycle(bldc_self);
+
+	return BLDC_OK;
+}
 
 void compute_svpwm(BLDC_t *bldc_self)
 {
@@ -171,7 +179,7 @@ void compute_svpwm(BLDC_t *bldc_self)
 
 	float theta_s = bldc_self->theta_e - (sector - 1) * PI_DIV_THREE;
 
-	uint8_t m = 1;
+	uint8_t m = 1; /* TODO: Update svpwm equations used, remove m */
 
 	t1 = bldc_self->pwm_period * m * (sinf(60-bldc_self->theta_e))/sinf(60);
 	t2 = bldc_self->pwm_period * m * (sinf(bldc_self->theta_e))/sinf(60);
@@ -237,9 +245,7 @@ void bldc_move(BLDC_t *bldc_self, int32_t setpoint)
 	compute_pi(&bldc_self->pi_pos);
 
 	/* Set PWM for phases */
-	bldc_self->htim_pwm->Instance->CCR1 = bldc_self->duty_pwm1;
-	bldc_self->htim_pwm->Instance->CCR2 = bldc_self->duty_pwm1;
-	bldc_self->htim_pwm->Instance->CCR3 = bldc_self->duty_pwm1;
+	set_phase_duty_cycle(bldc_self);
 }
 
 bldc_err_t init_motor_foc(BLDC_t *self,
@@ -247,24 +253,34 @@ bldc_err_t init_motor_foc(BLDC_t *self,
 						  AS5600_t as5600_enc,
 						  ADC_HandleTypeDef *ADC_current_sensor,
 						  uint8_t pole_pairs,
-						  float kp, float ki, float kd)
+						  uint32_t pwm_freq,
+						  float kp, float ki,
+						  void (*delayFunction)(uint32_t))
 {
 	if(self == NULL)
+	{
 		return BLDC_FAIL;
+	}
 
 	memset(self, 0, sizeof(BLDC_t));
 
+	self->delay = delayFunction;
+
 	self->htim_pwm = htim_pwm;
 	self->as5600_enc = as5600_enc;
+	self->ADC_current_sensor = ADC_current_sensor;
 	self->pi_pos.kp = kp;
 	self->pi_pos.ki = ki;
-	self->pi_pos.kd = kd;
 	self->pole_pairs = pole_pairs;
 
-	uint32_t pwm_freq = 20000;	/* TODO: change method of getting PWM frequency */
-	self->pwm_period = (1/(float)pwm_freq)*100000;
+	self->pwm_freq = pwm_freq;	/* TODO: change method of getting PWM frequency */
+	self->pwm_period = (1/(float)self->pwm_freq)*100000;
+
+	/* Align rotor on startup to determine electrical angle offset */
+	if(motor_align(self) != BLDC_OK)
+	{
+		return BLDC_FAIL;
+	}
 
 	return BLDC_OK;
 }
-
-

@@ -18,7 +18,7 @@
 
 typedef struct{
 	float ctrl_signal;
-	float kp, ki, kd;
+	float kp, ki;
 	float p_err, i_err, d_err;
 	uint32_t us_time;
 	uint32_t d_time;

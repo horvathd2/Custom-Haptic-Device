@@ -46,6 +46,7 @@ typedef enum{
 typedef uint8_t bldc_err_t;
 
 typedef struct{
+	void (*delay)(uint32_t ticks);
 	PI_t pi_pos;
 	AS5600_t as5600_enc;
 	ADC_HandleTypeDef *ADC_current_sensor;
@@ -54,6 +55,8 @@ typedef struct{
 	float ialpha, ibeta;	/* TODO: SWITCH FROM FLOAT TO INT? */
 	float m_q, m_d;
 	float theta_m, theta_e;
+	uint32_t pwm_freq;
+	uint16_t theta_m_offset;
 	uint16_t pwm_period;
 	uint16_t duty_pwm1;
 	uint16_t duty_pwm2;
@@ -63,6 +66,25 @@ typedef struct{
 
 /* FUNCTION PROTOTYPES */
 
+uint16_t get_mechanical_angle(BLDC_t *bldc_self);
 
+uint16_t get_electrical_angle(BLDC_t *bldc_self);
+
+void set_phase_duty_cycle(BLDC_t *bldc_self);
+
+bldc_err_t motor_align(BLDC_t *bldc_self);
+
+void compute_svpwm(BLDC_t *bldc_self);
+
+void bldc_move(BLDC_t *bldc_self, int32_t setpoint);
+
+bldc_err_t init_motor_foc(BLDC_t *self,
+						  TIM_HandleTypeDef *htim_pwm,
+						  AS5600_t as5600_enc,
+						  ADC_HandleTypeDef *ADC_current_sensor,
+						  uint8_t pole_pairs,
+						  uint32_t pwm_freq,
+						  float kp, float ki,
+						  void (*delayFunction)(uint32_t));
 
 #endif /* INC_FOC_UTILS_H_ */

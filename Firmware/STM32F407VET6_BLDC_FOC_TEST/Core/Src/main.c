@@ -619,7 +619,9 @@ volatile float speed = 800.0f;           // Delay in microseconds between steps 
 volatile uint16_t pwm_duty = 4800;       // 0 ~ 5999
 volatile uint8_t buttonHeld = 0;
 char usb_tx[128];
+
 AS5600_t as5600_dev;
+BLDC_t bldc_motor;
 
 volatile uint16_t raw_adc_curr = 0;
 volatile int16_t raw_adc_curr_local = 0;
@@ -659,30 +661,6 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 	}
 }
 
-void motor_align(void)
-{
-	uint16_t dutyA = 5999;
-	uint16_t dutyB = 0;
-	uint16_t dutyC = 0;
-
-	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, dutyA);
-	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, dutyB);
-	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3, dutyC);
-
-	osDelay(500);
-	as5600_read_angle(&as5600_dev);
-
-	dutyA = 0;
-	dutyB = 0;
-	dutyC = 0;
-
-	osDelay(500);
-
-	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, dutyA);
-	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, dutyB);
-	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3, dutyC);
-}
-
 void current_calibrate(void)
 {
 	float sum = 0.0f;
@@ -711,6 +689,13 @@ void current_calibrate(void)
 	sprintf(buf, "\nCurrent offset calibrated: %.4f V\n", current_offset);
 	CDC_Transmit_FS((uint8_t*)buf, strlen(buf));
 }
+
+/* Wrapper function for FreeRTOS osDelay */
+void delay_wrapper(uint32_t ticks)
+{
+	osDelay(ticks);
+}
+
 /* USER CODE END 4 */
 
 /* USER CODE BEGIN Header_main_task1 */
@@ -725,7 +710,7 @@ void main_task1(void *argument)
 	/* init code for USB_DEVICE */
 	MX_USB_DEVICE_Init();
 	/* USER CODE BEGIN 5 */
-	HAL_GPIO_WritePin(DEBUG_PIN_GPIO_Port, DEBUG_PIN_Pin, GPIO_PIN_SET); //Debug pin read from oscilloscope
+	HAL_GPIO_WritePin(DEBUG_PIN_GPIO_Port, DEBUG_PIN_Pin, GPIO_PIN_SET); //Debug pin for oscilloscope
 
 	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4, 5990); //Setup CH4 pwm to near ARR so ADC injection is at middle
 
@@ -748,33 +733,31 @@ void main_task1(void *argument)
 	if(as5600_init(&as5600_dev, &hi2c1, AS5600_ADDR) != AS_OK)
 	{
 		sprintf(usb_tx, "\nFailed to initialize AS5600 encoder...");
+		CDC_Transmit_FS((uint8_t*)usb_tx, strlen(usb_tx));
 	}
 
-	CDC_Transmit_FS((uint8_t*)usb_tx, strlen(usb_tx));
+	uint8_t bldc_init = init_motor_foc(&bldc_motor,
+			  	  	  	  	  	  	   &htim1,
+									   as5600_dev,
+									   &hadc1,
+									   7,
+									   20000,
+									   1.0, 0.0002,
+									   delay_wrapper);
 
-	motor_align();
+	if(bldc_init != BLDC_OK)
+	{
+		sprintf(usb_tx, "\nFailed to initialize BLDC...");
+		CDC_Transmit_FS((uint8_t*)usb_tx, strlen(usb_tx));
+	}
+	else
+	{
+		motor_align(&bldc_motor);
+	}
+
 	/* Infinite loop */
 	while(1)
 	{
-		//		if(buttonHeld)
-		//		{
-		//			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_RESET);
-		//			motor_align();
-		//		}
-		//		else
-		//		{
-		//			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_SET);
-		//			__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 0);
-		//			__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 0);
-		//			__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3, 0);
-		//
-		//		}
-
-		//		uint16_t raw = ADC1->JDR1;
-		//
-		//		float voltage = (raw * 3.3f) / 4095.0f;   // if using 12-bit ADC + 3.3V (STM32 etc.)
-		//		float current = (voltage - 2.5f) / 0.181f;
-
 		//current=(vadc-vref)/gain*rshunt;
 		/*
 		__disable_irq();
@@ -805,8 +788,7 @@ void main_task1(void *argument)
 
 		sprintf(usb_tx, "\nElectrical angle: %d \nMechanical angle: %d", elec_angle, mec_angle);
 
-//		sprintf(usb_tx, "\nRaw angle: %d",
-//				as5600_dev.raw_angle);
+		//sprintf(usb_tx, "\nRaw angle: %d", as5600_dev.raw_angle);
 
 		CDC_Transmit_FS((uint8_t*)usb_tx, strlen(usb_tx));
 
