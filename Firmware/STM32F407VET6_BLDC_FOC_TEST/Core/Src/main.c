@@ -620,7 +620,6 @@ volatile uint16_t pwm_duty = 4800;       // 0 ~ 5999
 volatile uint8_t buttonHeld = 0;
 char usb_tx[128];
 
-AS5600_t as5600_dev;
 BLDC_t bldc_motor;
 
 volatile uint16_t raw_adc_curr = 0;
@@ -730,15 +729,9 @@ void main_task1(void *argument)
 	osDelay(100);   // let ADC stabilize
 	//current_calibrate();  // IMPORTANT
 
-	if(as5600_init(&as5600_dev, &hi2c1, AS5600_ADDR) != AS_OK)
-	{
-		sprintf(usb_tx, "\nFailed to initialize AS5600 encoder...");
-		CDC_Transmit_FS((uint8_t*)usb_tx, strlen(usb_tx));
-	}
-
 	uint8_t bldc_init = init_motor_foc(&bldc_motor,
 			  	  	  	  	  	  	   &htim1,
-									   as5600_dev,
+									   &hi2c1,
 									   &hadc1,
 									   7,
 									   20000,
@@ -752,7 +745,13 @@ void main_task1(void *argument)
 	}
 	else
 	{
-		motor_align(&bldc_motor);
+		HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_7);
+		osDelay(500);
+		HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_7);
+		osDelay(500);
+		HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_7);
+		osDelay(500);
+		HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_7);
 	}
 
 	/* Infinite loop */
@@ -783,7 +782,7 @@ void main_task1(void *argument)
 		CDC_Transmit_FS((uint8_t*)usb_tx, strlen(usb_tx));
 		*/
 
-		uint16_t mec_angle = (uint16_t)(as5600_dev.raw_angle * ENC_TO_DEG);
+		uint16_t mec_angle = (uint16_t)(bldc_motor.as5600_enc.raw_angle * ENC_TO_DEG);
 		uint16_t elec_angle = mec_angle * 7;
 
 		sprintf(usb_tx, "\nElectrical angle: %d \nMechanical angle: %d", elec_angle, mec_angle);
@@ -792,7 +791,7 @@ void main_task1(void *argument)
 
 		CDC_Transmit_FS((uint8_t*)usb_tx, strlen(usb_tx));
 
-		HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_7);
+
 
 		osDelay(500);
 	}

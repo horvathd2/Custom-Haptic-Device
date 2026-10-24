@@ -39,11 +39,16 @@
 /* TYPEDEFS AND STRUCTS */
 
 typedef enum{
+	BLDC_NOT_INITIALIZED = 0U,
+	BLDC_INITIALIZED = 1U,
+	BLDC_HALTED = 2U,
+	BLDC_RUNNING = 3U,
+}bldc_state_t;
+
+typedef enum{
 	BLDC_OK = 0x00,
 	BLDC_FAIL = 0x01,
-}bldc_status_t;
-
-typedef uint8_t bldc_err_t;
+}bldc_err_t;
 
 typedef struct{
 	void (*delay)(uint32_t ticks);
@@ -55,6 +60,7 @@ typedef struct{
 	float ialpha, ibeta;	/* TODO: SWITCH FROM FLOAT TO INT? */
 	float m_q, m_d;
 	float theta_m, theta_e;
+	bldc_state_t bldc_state;
 	uint32_t pwm_freq;
 	uint16_t theta_m_offset;
 	uint16_t pwm_period;
@@ -80,7 +86,7 @@ void bldc_move(BLDC_t *bldc_self, int32_t setpoint);
 
 bldc_err_t init_motor_foc(BLDC_t *self,
 						  TIM_HandleTypeDef *htim_pwm,
-						  AS5600_t as5600_enc,
+						  I2C_HandleTypeDef *as5600_i2c,
 						  ADC_HandleTypeDef *ADC_current_sensor,
 						  uint8_t pole_pairs,
 						  uint32_t pwm_freq,

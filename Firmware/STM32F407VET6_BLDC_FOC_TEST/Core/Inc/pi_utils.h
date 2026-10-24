@@ -30,6 +30,6 @@ typedef struct{
 
 /* FUNCTION PROTOTYPES */
 
-
+void compute_pi(PI_t *pi_self);
 
 #endif /* INC_PI_UTILS_H_ */

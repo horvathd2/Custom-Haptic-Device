@@ -13,7 +13,10 @@
 
 /* LOCAL STATIC FUNCTIONS */
 
-static void compute_pi(PI_t *pi_self)
+
+/* GLOBAL FUNCTIONS */
+
+void compute_pi(PI_t *pi_self)
 {
 	pi_self->us_time = HAL_GetTick();
 	pi_self->d_time = (pi_self->us_time - pi_self->prev_time);
@@ -28,7 +31,6 @@ static void compute_pi(PI_t *pi_self)
 
 	pi_self->prev_error	= pi_self->p_err;
 	pi_self->prev_time	= pi_self->us_time;
+
+	//if(pi_self->ctrl_signal > )
 }
-
-/* GLOBAL FUNCTIONS */
-
