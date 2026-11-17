@@ -635,9 +635,10 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
 		//DEBUG_PIN_GPIO_Port->BSRR = DEBUG_PIN_Pin<<16;
 		//DEBUG_PIN_GPIO_Port->BSRR = DEBUG_PIN_Pin;
 
-		raw_adc_curr = (uint16_t)ADC1->JDR1; //maybe use atomic or disable interrupts
-		//ib = ADC2->JDR1;
-		//ic = ADC3->JDR1;
+		//raw_adc_curr = (uint16_t)ADC1->JDR1;
+		bldc_motor.ia = (uint16_t)ADC1->JDR1;
+		bldc_motor.ib = (uint16_t)ADC2->JDR1;
+		bldc_motor.ic = (uint16_t)ADC3->JDR1;
 	}
 }
 
@@ -785,7 +786,7 @@ void main_task1(void *argument)
 		uint16_t mec_angle = (uint16_t)(bldc_motor.as5600_enc.raw_angle * ENC_TO_DEG);
 		uint16_t elec_angle = mec_angle * 7;
 
-		sprintf(usb_tx, "\nElectrical angle: %d \nMechanical angle: %d", elec_angle, mec_angle);
+		sprintf(usb_tx, "\nElectrical angle: %d \nMechanical angle: %d \nCurrent ADC1: %d", elec_angle, mec_angle, raw_adc_curr);
 
 		//sprintf(usb_tx, "\nRaw angle: %d", as5600_dev.raw_angle);
 

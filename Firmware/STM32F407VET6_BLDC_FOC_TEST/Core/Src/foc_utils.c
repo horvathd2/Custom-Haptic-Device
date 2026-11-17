@@ -61,7 +61,7 @@ static void inverse_park_transform(float vd, float vq, float sin_theta, float co
 	*beta = vd * sin_theta + vq * cos_theta;
 }
 
-static uint8_t compute_sv_sector(float alpha, float beta)
+static uint8_t compute_sv_sector(uint16_t alpha, uint16_t beta)
 {
 	uint8_t u8Sector = SVPWM_SECTOR_V1;
 
@@ -118,7 +118,7 @@ void set_phase_duty_cycle(BLDC_t *bldc_self)
 	bldc_self->htim_pwm->Instance->CCR3 = bldc_self->duty_pwm3;
 }
 
-bldc_err_t motor_align(BLDC_t *bldc_self)
+bldc_err_t rotor_align(BLDC_t *bldc_self)
 {
 	bldc_err_t eRetVal = BLDC_OK;
 
@@ -265,13 +265,14 @@ bldc_err_t init_motor_foc(BLDC_t *self,
 	self->pwm_period = (1/(float)self->pwm_freq)*100000;
 	self->bldc_state = BLDC_NOT_INITIALIZED;
 
+	/* Initialize motor encoder */
 	if(as5600_init(&self->as5600_enc, self->as5600_enc.as5600_i2c, AS5600_ADDR) != AS_OK)
 	{
 		return BLDC_FAIL;
 	}
 
 	/* Align rotor on startup to determine electrical angle offset */
-	if(motor_align(self) != BLDC_OK)
+	if(rotor_align(self) != BLDC_OK)
 	{
 		return BLDC_FAIL;
 	}

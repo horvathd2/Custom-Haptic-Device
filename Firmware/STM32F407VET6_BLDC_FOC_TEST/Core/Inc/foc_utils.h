@@ -56,17 +56,15 @@ typedef struct{
 	AS5600_t as5600_enc;
 	ADC_HandleTypeDef *ADC_current_sensor;
 	TIM_HandleTypeDef *htim_pwm;
-	float ia, ib, ic;
-	float ialpha, ibeta;	/* TODO: SWITCH FROM FLOAT TO INT? */
 	float m_q, m_d;
 	float theta_m, theta_e;
 	bldc_state_t bldc_state;
 	uint32_t pwm_freq;
+	volatile uint16_t ia, ib, ic;
+	uint16_t ialpha, ibeta;	/* TODO: SWITCH FROM FLOAT TO INT? */
 	uint16_t theta_m_offset;
 	uint16_t pwm_period;
-	uint16_t duty_pwm1;
-	uint16_t duty_pwm2;
-	uint16_t duty_pwm3;
+	uint16_t duty_pwm1, duty_pwm2, duty_pwm3;
 	uint8_t pole_pairs;
 }BLDC_t;
 
@@ -78,7 +76,7 @@ uint16_t get_electrical_angle(BLDC_t *bldc_self);
 
 void set_phase_duty_cycle(BLDC_t *bldc_self);
 
-bldc_err_t motor_align(BLDC_t *bldc_self);
+bldc_err_t rotor_align(BLDC_t *bldc_self);
 
 void compute_svpwm(BLDC_t *bldc_self);
 
